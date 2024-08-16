@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; The Overlapping Generations Model – Notes in Economic Growth and Fluctuations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./AK.html" rel="next">
+<link href="./Ramsey.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Solow.html">Benchmark Models in Growth and Fluctuations Theory</a></li><li class="breadcrumb-item"><a href="./OLG.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Overlapping Generations Model</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Notes in Economic Growth and Fluctuations</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ODE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ordinary Differentials Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./differenceq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Difference Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intertemporal-Optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Intertemporal Optimization</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Benchmark Models in Growth and Fluctuations Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Solow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Solow Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ramsey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Ramsey-Cass-Koopmans Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./OLG.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Overlapping Generations Model</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Endogenous Growth Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./AK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The AK model - Spillovers à la Romer(1986)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./humanK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Human capital and Growth (Lucas, 1988)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./horizontal-innovations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Horizontal Innovations and Model of Expanding Varieties (Romer, 1990)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vertical-innovations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vertical innovations and Model of Quality Ladders (Grossman-Helpman ,1991; Aghion and Howitt 1992)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-model" id="toc-the-model" class="nav-link active" data-scroll-target="#the-model"><span class="header-section-number">7.1</span> The Model</a>
+  <ul class="collapse">
+  <li><a href="#consumers" id="toc-consumers" class="nav-link" data-scroll-target="#consumers"><span class="header-section-number">7.1.1</span> Consumers</a></li>
+  <li><a href="#firms" id="toc-firms" class="nav-link" data-scroll-target="#firms"><span class="header-section-number">7.1.2</span> Firms</a></li>
+  <li><a href="#competitive-equilibrium" id="toc-competitive-equilibrium" class="nav-link" data-scroll-target="#competitive-equilibrium"><span class="header-section-number">7.1.3</span> Competitive Equilibrium</a></li>
+  </ul></li>
+  <li><a href="#dynamics" id="toc-dynamics" class="nav-link" data-scroll-target="#dynamics"><span class="header-section-number">7.2</span> Dynamics</a></li>
+  <li><a href="#a-word-on-the-general-case" id="toc-a-word-on-the-general-case" class="nav-link" data-scroll-target="#a-word-on-the-general-case"><span class="header-section-number">7.3</span> A word on the general Case</a></li>
+  <li><a href="#dynamic-inefficiency" id="toc-dynamic-inefficiency" class="nav-link" data-scroll-target="#dynamic-inefficiency"><span class="header-section-number">7.4</span> Dynamic Inefficiency</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Solow.html">Benchmark Models in Growth and Fluctuations Theory</a></li><li class="breadcrumb-item"><a href="./OLG.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Overlapping Generations Model</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Overlapping Generations Model</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The Ramsey-Cass-Koopmans model considers a representative household that lives infinite horizons. In many circumstances, however, the assumption of a representative household is not appropriate. One important set of circumstances that may require departure from this assumption is in the analysis of an economy in which new households are born over time. The arrival of new households in the economy is not only a realistic feature, but it also introduces a range of new economic interactions. In particular, decisions made by older generations will affect the prices faced by younger generations. These economic interactions have no counterpart in the neoclassical growth model. They are most succinctly captured in the overlapping generations (OLG) models introduced and studied by Paul Samuelson and later by Peter Diamond. The OLG model considers infinite agents who only live finite periods. In particular, new individuals are continually being born, and old individuals are continually dying.</p>
+<p>The OLG model is useful for a number of reasons. First, it captures the potential interaction of different generations of individuals in the marketplace. Second, it provides a tractable alternative to the infinite-horizon representative agent models. Third, some of the key implications are different from those of the neoclassical growth model (e.g.&nbsp;dynamic inefficiency). Finally, the OLG model provides a flexible framework to study the effects of macroeconomic policies such as national debt and social security.</p>
+<section id="the-model" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="the-model"><span class="header-section-number">7.1</span> The Model</h2>
+<p>In this economy, time is discrete and runs to infinity. Each individual lives two periods. For the generation born in period <span class="math inline">\(t\)</span>, they live for period <span class="math inline">\(t\)</span> and <span class="math inline">\(t+1\)</span>. In period <span class="math inline">\(t\)</span>, they are young generation, and become old generation in period <span class="math inline">\(t+1\)</span>. As individuals live only two periods, the economy always have two generations in any period. <span class="math inline">\(L_{t}\)</span> individuals are born in period <span class="math inline">\(t\)</span>. As in Ramsey model, population grows at rate <span class="math inline">\(n\)</span>, i.e.,</p>
+<p><span class="math display">\[
+L_{t}=(1+n) L_{t-1}
+\]</span></p>
+<p>Thus, there are <span class="math inline">\(L_{t}\)</span> young generation and <span class="math inline">\(L_{t-1}\left(=L_{t} /(1+n)\right)\)</span> old generation.</p>
+<section id="consumers" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="consumers"><span class="header-section-number">7.1.1</span> Consumers</h3>
+<p>Each consumer supplies 1 unit of labor at wage rate <span class="math inline">\(W_{t}\)</span> when he/she is young and divides the labor income between first-period consumption and saving with interest rate <span class="math inline">\(R_{t}=(1+r_t)\)</span>. In the second period, the individual simply consumes the saving and any interest he/she earns. Let <span class="math inline">\(c_{1 t}\)</span> and <span class="math inline">\(c_{2 t}\)</span> denote the consumption in period <span class="math inline">\(t\)</span> of young and old individuals. A representative individual born in period <span class="math inline">\(t\)</span> solves</p>
+<p><span class="math display">\[
+\max _{\left\{c_{1 t}, c_{2 t+1}\right\}} \frac{c_{1 t}^{1-\theta}}{1-\theta}+\beta \frac{c_{2 t+1}^{1-\theta}}{1-\theta}
+\]</span></p>
+<p>subject to budget constraint</p>
+<p><span class="math display">\[
+\begin{aligned}
+c_{1 t}+s_{t} &amp; \leq W_{t} \\
+c_{2 t+1} &amp; \leq R_{t+1} s_{t}
+\end{aligned}
+\]</span></p>
+<p>The above problem can be written more compactly by substituting the budget constraints as</p>
+<p><span class="math display">\[
+\max _{s_{t}} \frac{\left(W_{t}-s_{t}\right)^{1-\theta}}{1-\theta}+\beta \frac{\left(R_{t+1} s_{t}\right)^{1-\theta}}{1-\theta}
+\]</span></p>
+<p>and consumptions are give by</p>
+<p><span class="math display">\[
+\begin{aligned}
+c_{1 t} &amp; =W_{t}-s_{t} \\
+c_{2 t+1} &amp; =R_{t+1} s_{t}
+\end{aligned}
+\]</span></p>
+<p>First order condition for the optimal saving is</p>
+<p><span class="math display">\[
+\left(W_{t}-s_{t}\right)^{-\theta}=\beta R_{t+1}\left(R_{t+1} s_{t}\right)^{-\theta}
+\]</span></p>
+<p>Thus the optimal saving <span class="math inline">\(s_{t}\)</span> is given by</p>
+<p><span class="math display">\[
+s_{t}=s\left(R_{t+1}\right) W_{t}
+\]</span></p>
+<p>where <span class="math inline">\(s\left(R_{t}\right)=\frac{1}{1+\beta^{-\frac{1}{\theta}} R_{t+1}^{1-\frac{1}{\theta}}}\)</span> indicates the saving rate. Note that, for <span class="math inline">\(\theta=1\)</span> (the utility is logarithm), the saving rate is just a constant <span class="math inline">\(\frac{\beta}{1+\beta}\)</span>. Later we will show that in this case the OLG model is equivalent to the Solow model with saving rate <span class="math inline">\(\beta /(1+\beta)\)</span>. Moreover, optimal consumptions are given by</p>
+<p><span class="math display">\[
+\begin{aligned}
+c_{1 t}=\left[1-s\left(R_{t+1}\right)\right] W_{t} \\
+c_{2 t+1}=R_{t+1} s\left(R_{t+1}\right) W_{t}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="firms" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="firms"><span class="header-section-number">7.1.2</span> Firms</h3>
+<p>A representative firm hires labor <span class="math inline">\(L_{t}\)</span> and rents capital <span class="math inline">\(K_{t}\)</span> to produce final goods according to the production function <span class="math inline">\(Y_{t}=F\left(K_{t}, A_{t} L_{t}\right)\)</span>, where the technology <span class="math inline">\(A_{t}\)</span> is assumed to follow</p>
+<p><span class="math display">\[
+A_{t}=(1+g)^{t} A_{t-1}
+\]</span></p>
+<p>We assume that the capital is fully depreciated. The firm aims to maximize the profit by choosing <span class="math inline">\(L_{t}\)</span> and <span class="math inline">\(K_{t}\)</span>. The optimization problem is</p>
+<p><span class="math display">\[
+\max _{\left\{L_{t}, K_{t}\right\}} F\left(K_{t}, A_{t} L_{t}\right)-W_{t} L_{t}-R_{t} K_{t}
+\]</span></p>
+<p>The first order conditions w.r.t. <span class="math inline">\(\left\{L_{t}, K_{t}\right\}\)</span> are given by</p>
+<p><span class="math display">\[
+\begin{aligned}
+R_{t}=F_{K}\left(K_{t}, A_{t} L_{t}\right) \\
+W_{t}=F_{A L}\left(K_{t}, A_{t} L_{t}\right) A_{t}
+\end{aligned}
+\]</span></p>
+<p>We assume the production function is constant return to scale. Let <span class="math inline">\(f(\tilde{k})=F\left(\frac{K}{A L}, 1\right)\)</span>, where <span class="math inline">\(\tilde{k}=\frac{K}{A L}\)</span>. The input demands can be expressed as</p>
+<p><span id="eq-prices"><span class="math display">\[
+\begin{aligned}
+R_{t}=f^{\prime}\left(\tilde{k}_{t}\right) \\
+W_{t}=\left[f\left(\tilde{k}_{t}\right)-f^{\prime}\left(\tilde{k}_{t}\right) \tilde{k}_{t}\right] A_{t}
+\end{aligned}
+\tag{7.1}\]</span></span></p>
+</section>
+<section id="competitive-equilibrium" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="competitive-equilibrium"><span class="header-section-number">7.1.3</span> Competitive Equilibrium</h3>
+<p>In the competitive equilibrium, consumers and firms achieve the individual optimum. Each market clears. In particular, capital market clearing condition implies</p>
+<p><span class="math display">\[
+K_{t+1}=L_{t} s\left(R_{t+1}\right) W_{t}
+\]</span></p>
+<p>According to (<a href="#eq-prices" class="quarto-xref"><span>7.1</span></a>), the last equation can be rewritten as</p>
+<p><span class="math display">\[
+\tilde{k}_{t+1}=\frac{1}{(1+g)(1+n)} s\left(f^{\prime}\left(\tilde{k}_{t+1}\right)\right)\left[\frac{f\left(\tilde{k}_{t}\right)-f^{\prime}\left(\tilde{k}_{t}\right) \tilde{k}_{t}}{f\left(\tilde{k}_{t}\right)}\right] f\left(\tilde{k}_{t}\right)
+\]</span></p>
+<p>The above equation fully describes the dynamics of capital stock.</p>
+</section>
+</section>
+<section id="dynamics" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="dynamics"><span class="header-section-number">7.2</span> Dynamics</h2>
+<ul>
+<li>Special Case: <span class="math inline">\(\theta=1\)</span>.</li>
+</ul>
+<p>Assume that <span class="math inline">\(\theta=1\)</span> (utility is logarithm) and the production function takes Cobb-Douglas form, i.e., <span class="math inline">\(F(K, A L)=K^{\alpha}(A L)^{1-\alpha}\)</span>. The saving rate in this case is <span class="math inline">\(s\left(f^{\prime}\left(\tilde{k}_{t+1}\right)\right)=\frac{\beta}{1+\beta}\)</span>. Equation (19) can be reduced into</p>
+<p><span id="eq-dynamics"><span class="math display">\[
+\tilde{k}_{t+1}=\frac{1}{(1+g)(1+n)} \frac{\beta}{1+\beta}(1-\alpha) \tilde{k}_{t}^{\alpha}
+\tag{7.2}\]</span></span></p>
+<p>Note that this expression essentially has the same form as the one derived from the Solow model. Hence, when utility function takes logarithm form, the OLG model is degenerated to the Solow model.</p>
+</section>
+<section id="a-word-on-the-general-case" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="a-word-on-the-general-case"><span class="header-section-number">7.3</span> A word on the general Case</h2>
+<p>Once we relax the assumptions of logarithmic utility and Cobb-Douglas production technology, a wide range of behaviors of the economy are possible, including multiple equilibria. See Michel and De La Croix (2002)</p>
+</section>
+<section id="dynamic-inefficiency" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="dynamic-inefficiency"><span class="header-section-number">7.4</span> Dynamic Inefficiency</h2>
+<p>Even though in the OLG model, competitive equilibrium is achieved, it turns out that the competitive allocation is not necessarily dynamically efficient, just as in the Solow model. To see this, let us discuss the capital stock at the steady state. For simplicity, we still consider the special case where <span class="math inline">\(\theta=1\)</span> and <span class="math inline">\(f(\tilde{k})=\tilde{k}^{\alpha}\)</span>.</p>
+<p>From (<a href="#eq-dynamics" class="quarto-xref"><span>7.2</span></a>), we can obtain the steady-state capital stock <span class="math inline">\(k^{*}\)</span> for the competitive equilibrium from</p>
+<p><span id="eq-GR"><span class="math display">\[
+f^{\prime}\left(k^{*}\right)=\alpha\left(k^{*}\right)^{\alpha-1}=(1+g)(1+n)\left(\frac{1+\beta}{\beta} \frac{\alpha}{1-\alpha}\right) .
+\tag{7.3}\]</span></span></p>
+<p>Now consider a social planner’s problem:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \max _{\left\{c_{1 t}, c_{2 t}\right\}} \sum_{t=0} \beta^{t}\left(L_{t} \frac{c_{1 t}^{1-\theta}}{1-\theta}+L_{t-1} \phi \frac{c_{2 t}^{1-\theta}}{1-\theta}\right) \\
+= &amp; \max _{\left\{c_{1 t}, c_{2 t}\right\}} \sum_{t=0}[\beta(1+n)(1+g)]^{t}\left(\frac{\tilde{c}_{1 t}^{1-\theta}}{1-\theta}+\frac{1}{1+n} \phi \frac{\tilde{c}_{2 t}^{1-\theta}}{1-\theta}\right)
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\phi&gt;0\)</span> is the weight that social planner puts on the old generation, <span class="math inline">\(\tilde{c}_{1 t}=c_{1 t} / A_{t}, \tilde{c}_{2 t}=c_{2 t} / A_{t}\)</span>. The resource constraint is</p>
+<p><span class="math display">\[
+L_{t} c_{1 t}+L_{t-1} c_{2 t}+K_{t+1}=Y_{t}
+\]</span></p>
+<p>Detrending both side with <span class="math inline">\(A_{t} L_{t}\)</span> gives us</p>
+<p><span class="math display">\[
+\tilde{c}_{1 t}+\frac{\tilde{c}_{2 t}}{1+n}+(1+n)(1+g) \tilde{k}_{t+1}=f\left(\tilde{k}_{t}\right)
+\]</span></p>
+<p>FOCs w.r.t <span class="math inline">\(\left\{\tilde{c}_{1 t}, \tilde{c}_{2 r}, \tilde{k}_{t+1}\right\}\)</span> are given by</p>
+<p><span id="eq-kss"><span class="math display">\[
+\begin{aligned}
+\tilde{c}_{1 t}^{-\theta}=\phi \tilde{c}_{2 t}^{-\theta}=\lambda_{t} \\
+(1+n)(1+g) \lambda_{t}=\beta \lambda_{t+1} f^{\prime}\left(\tilde{k}_{t+1}\right)
+\end{aligned}
+\tag{7.4}\]</span></span></p>
+<p>In the steady state, we have</p>
+<p><span class="math display">\[
+f^{\prime}(k^{gr})=\frac{(1+n)(1+g)}{\beta}
+\]</span> which is the golden rule.</p>
+<p>Comparing (<a href="#eq-GR" class="quarto-xref"><span>7.3</span></a>) with (<a href="#eq-kss" class="quarto-xref"><span>7.4</span></a>), the capital stock in competitive equilibrium is efficient only if</p>
+<p><span class="math display">\[
+\frac{(1+\beta) \alpha}{1-\alpha}=1
+\]</span></p>
+<p>Therefore, in general, the competitive equilibrium in the OLG model is not dynamically efficient in contrast to the Ramsey model. This is mainly due to the finite-horizon of households which prevents violating any transversality condition.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Ramsey.html" class="pagination-link" aria-label="The Ramsey-Cass-Koopmans Model">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Ramsey-Cass-Koopmans Model</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./AK.html" class="pagination-link" aria-label="The AK model - Spillovers à la Romer(1986)">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The AK model - Spillovers à la Romer(1986)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
