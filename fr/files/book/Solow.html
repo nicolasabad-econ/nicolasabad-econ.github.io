@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; The Solow Model – Notes in Economic Growth and Fluctuations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Ramsey.html" rel="next">
+<link href="./Intertemporal-Optimization.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Solow.html">Benchmark Models in Growth and Fluctuations Theory</a></li><li class="breadcrumb-item"><a href="./Solow.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Solow Model</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Notes in Economic Growth and Fluctuations</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ODE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ordinary Differentials Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./differenceq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Difference Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intertemporal-Optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Intertemporal Optimization</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Benchmark Models in Growth and Fluctuations Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Solow.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Solow Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ramsey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Ramsey-Cass-Koopmans Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./OLG.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Overlapping Generations Model</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Endogenous Growth Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./AK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The AK model - Spillovers à la Romer(1986)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./humanK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Human capital and Growth (Lucas, 1988)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./horizontal-innovations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Horizontal Innovations and Model of Expanding Varieties (Romer, 1990)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vertical-innovations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vertical innovations and Model of Quality Ladders (Grossman-Helpman ,1991; Aghion and Howitt 1992)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#a-general-property-the-balanced-growth-path" id="toc-a-general-property-the-balanced-growth-path" class="nav-link" data-scroll-target="#a-general-property-the-balanced-growth-path"><span class="header-section-number">5.2</span> A general property: the balanced-growth path</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions"><span class="header-section-number">5.3</span> Assumptions</a></li>
+  <li><a href="#solving-the-model" id="toc-solving-the-model" class="nav-link" data-scroll-target="#solving-the-model"><span class="header-section-number">5.4</span> Solving the model</a></li>
+  <li><a href="#growth-rates" id="toc-growth-rates" class="nav-link" data-scroll-target="#growth-rates"><span class="header-section-number">5.5</span> Growth rates</a></li>
+  <li><a href="#transitional-dynamics" id="toc-transitional-dynamics" class="nav-link" data-scroll-target="#transitional-dynamics"><span class="header-section-number">5.6</span> Transitional dynamics</a></li>
+  <li><a href="#behavior-of-the-interest-rate-and-the-wage-rate" id="toc-behavior-of-the-interest-rate-and-the-wage-rate" class="nav-link" data-scroll-target="#behavior-of-the-interest-rate-and-the-wage-rate"><span class="header-section-number">5.7</span> Behavior of the interest rate and the wage rate</a></li>
+  <li><a href="#the-golden-rule" id="toc-the-golden-rule" class="nav-link" data-scroll-target="#the-golden-rule"><span class="header-section-number">5.8</span> The Golden Rule</a></li>
+  <li><a href="#growth-accounting" id="toc-growth-accounting" class="nav-link" data-scroll-target="#growth-accounting"><span class="header-section-number">5.9</span> Growth Accounting</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix"><span class="header-section-number">5.10</span> Appendix</a>
+  <ul class="collapse">
+  <li><a href="#deriving-the-general-production-function-for-gdp-per-capita-and-effective-labor-gdp" id="toc-deriving-the-general-production-function-for-gdp-per-capita-and-effective-labor-gdp" class="nav-link" data-scroll-target="#deriving-the-general-production-function-for-gdp-per-capita-and-effective-labor-gdp"><span class="header-section-number">5.10.1</span> Deriving the general production function for GDP per capita and effective labor GDP</a></li>
+  <li><a href="#the-model-in-continuous-time" id="toc-the-model-in-continuous-time" class="nav-link" data-scroll-target="#the-model-in-continuous-time"><span class="header-section-number">5.10.2</span> The model in continuous-time</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Solow.html">Benchmark Models in Growth and Fluctuations Theory</a></li><li class="breadcrumb-item"><a href="./Solow.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Solow Model</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Solow Model</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<p>The Solow model constitutes a cornerstone in the growth analysis. Pre-solovian Growth Theory, turning mainly around Harrod and Domar contributions, concluded on the instability of long-run economic growth. Such conclusions were at odds at observed data. Although the Solow model has many pitfalls, it constitute a good starting point to discuss the structure of the many macroeconomic models that usually keep the same production structure.</p>
+<p>The contributions of Solow takes place within a range of observations, called Kaldor’s stylized facts (after Kaldor, 1963). Namely:</p>
+<ol type="1">
+<li>GDP per capital grows over time</li>
+<li>Per capital capital stock grows over time</li>
+<li>Capital interest rate is roughly constant over long period</li>
+<li>the capital-to-GDP ratio is roughly constant</li>
+<li>Capital income and labor income share are roughly constant over long period</li>
+<li>GDP per capita growth rates are different between countries</li>
+</ol>
+<p>Note a consequence of point 5. is that, because the labor income share <span class="math inline">\(wL/Y\)</span> is constant and that GDP per capita <span class="math inline">\(Y/L\)</span> grows, the wage rate <span class="math inline">\(w\)</span> has necessarily the same growth rate of the GDP per capita.</p>
+<p>These stylized fact are the benchmark points to evaluate any model of economic growth. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In the rest of this chapter, we first discuss an important property of benchmark growth model. Afterwards, we describe and solve the Solow model in discrete time (the continuous time being studied in Appendix). We study the equilibrium growth rates and transitional dynamics and also discuss further topics such as the properties of factor prices, the Golden Rule of capital accumulation and growth accounting.</p>
+</section>
+<section id="a-general-property-the-balanced-growth-path" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="a-general-property-the-balanced-growth-path"><span class="header-section-number">5.2</span> A general property: the balanced-growth path</h2>
+<p>Before starting with the presentation of the Solow model, we derive an important and useful property of any one-sector growth model provided it includes capital accumulation. This property, called <em>the balanced growth path</em> (or BGP), focuses on the equilibrium growth rates of aggregate quantities. We consider a simple economy characterized (for the moment) by two equations:</p>
+<p><span id="eq-kacc"><span class="math display">\[
+  K_{t+1}=I_t+(1-\delta)K_t
+   \tag{5.1}\]</span></span></p>
+<p><span id="eq-aggr-constraint"><span class="math display">\[
+  Y_t=C_t+I_t
+   \tag{5.2}\]</span></span></p>
+<p>Equation (<a href="#eq-kacc" class="quarto-xref"><span>5.1</span></a>) represents the capital accumulation equation<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> while Equation (<a href="#eq-aggr-constraint" class="quarto-xref"><span>5.2</span></a>) is the aggregate resource constraint of the economy. Variables <span class="math inline">\(K_t\)</span>, <span class="math inline">\(I_t\)</span>, <span class="math inline">\(C_t\)</span> and <span class="math inline">\(Y_t\)</span> the aggregate stock of capital installed at date <span class="math inline">\(t\)</span> and investment realized at date <span class="math inline">\(t\)</span>, aggregate consumption at date <span class="math inline">\(t\)</span> and GDP at date <span class="math inline">\(t\)</span> respectively. The parameter <span class="math inline">\(\delta \in(0,1)\)</span> represents depreciation of the capital stock at each period.</p>
+<div id="def-bgp" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.1</strong></span> A balanced-growth path is a path <span class="math inline">\(\{Y_t,C_t,I_t,K_t \}_{t \geq 0}\)</span> along which the quantities <span class="math inline">\(Y_t\)</span>, <span class="math inline">\(K_t\)</span>, and <span class="math inline">\(C_t\)</span> are positive and growth at constant rates, which we denotes <span class="math inline">\(g_Y\)</span>, <span class="math inline">\(g_K\)</span> and <span class="math inline">\(g_C\)</span> respectively.</p>
+</div>
+<p>We can show then:</p>
+<div id="prp-bgp" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5.1</strong></span> Let <span class="math inline">\(\{Y_t,C_t,I_t,K_t \}_{t \geq 0}\)</span> be a balanced-growth path. Then, given the capital accumulation equation and the aggregate resource constraint, the following holds:</p>
+<ol type="1">
+<li>If there is a BGP, then <span class="math inline">\(g_Y=g_K=g_C=g_I\)</span> and the ratios <span class="math inline">\(K/Y\)</span>, <span class="math inline">\(C/Y\)</span> and <span class="math inline">\(I/Y\)</span> are constant.</li>
+<li>if <span class="math inline">\(K/Y\)</span> and <span class="math inline">\(C/Y\)</span> are constant, then <span class="math inline">\(Y\)</span>, <span class="math inline">\(K\)</span>, <span class="math inline">\(C\)</span> and <span class="math inline">\(I\)</span> all grow at the same constant rate, i.e.&nbsp;there is a balanced-growth path with the additional property that all aggregate variables grow at the same growth rate.</li>
+</ol>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Proof</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For the first part of the proposition: by definition, <span class="math inline">\(g_Y\)</span>, <span class="math inline">\(g_C\)</span>, <span class="math inline">\(g_I\)</span> and <span class="math inline">\(g_K\)</span> are constant. Rewriting Equation (<a href="#eq-kacc" class="quarto-xref"><span>5.1</span></a>):</p>
+<p><span class="math display">\[
+\frac{\Delta K_{t+1}}{K_t}=g_K=\frac{I_t}{K_t}-\delta \Leftrightarrow \frac{I_t}{K_t}=g_K+\delta
+\]</span> Since the right-hand side of this equation is constant, then the ratio <span class="math inline">\(I_t/K_t\)</span> is constant and therefore <span class="math inline">\(I_t\)</span> and <span class="math inline">\(K_t\)</span> have the same growth rate (<span class="math inline">\(g_K=g_I\)</span>). We can focus on the aggregate resource constraint:</p>
+<p><span class="math display">\[
+Y_t=C_t+I_t \Rightarrow \Delta Y_t=\Delta C_t+\Delta I_t \Rightarrow g_Y=\frac{\Delta Y_t}{Y_t}=\frac{C_t}{Y_t}g_C+\frac{I_t}{Y_t}g_I
+\]</span> Since <span class="math inline">\(\frac{I_t}{Y_t}=1-\frac{C_t}{Y_t}\)</span> and <span class="math inline">\(g_I=g_K\)</span>, this equation becomes:</p>
+<p><span class="math display">\[
+g_Y=\frac{C_t}{Y_t}(g_C-g_K)+g_K
+\]</span> There are two possibilities: either <span class="math inline">\(g_C=g_K\)</span>, from which we directly derive that <span class="math inline">\(g_Y=g_K=g_C=g_I\)</span> or <span class="math inline">\(g_K\neq g_C\)</span> and the last equation rewrites:</p>
+<p><span class="math display">\[
+\frac{C_t}{Y_t}=\frac{g_Y-g_K}{g_C-g_K}
+\]</span> The right-hand side is constant, meaning that the ratio of <span class="math inline">\(C_t\)</span> over <span class="math inline">\(Y_t\)</span> is also constant, and therefore they grow at the same rate. Then, the RHS is equal to unity and therefore <span class="math inline">\(C_t=Y_t\)</span> which contradicts the fact <span class="math inline">\(I_t&gt;0\)</span>. Hence, <span class="math inline">\(g_C\neq g_K\)</span> is not possible according to the definition of a BGP and implies that <span class="math inline">\(g_C=g_K=g_Y=g_I\)</span>.</p>
+<p>To prove the second part of the proposition: Assume <span class="math inline">\(K/Y\)</span> and <span class="math inline">\(C/Y\)</span> are constant. Then, by definition, <span class="math inline">\(g_Y=g_K=g_C\)</span> and therefore <span class="math inline">\(\frac{I_t}{Y_t}=1-\frac{C_t}{Y_t}\)</span> meaning <span class="math inline">\(g_I=g_K\)</span>. To show that the growth rate is constant, we use Equation (<a href="#eq-kacc" class="quarto-xref"><span>5.1</span></a>):</p>
+<p><span class="math display">\[
+g_k=\frac{I_t}{K_t}-\delta
+\]</span> where the right-hand side is constant.</p>
+</div>
+</div>
+</div>
+<p>This is a quite important result as it implies that there can’t be persistent deviations of aggregate quantities growth rate. Furthermore, this not only gives us a starting point to link theoretical quantities with observable but also regularities to reproduce or not given the structure we give to the model.</p>
+</section>
+<section id="assumptions" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">5.3</span> Assumptions</h2>
+<p>On the demand side, we consider that households are identical and follow a linear keynesian consumption function. In particular, we assume the aggregate consumption is <span class="math inline">\(C_t=(1-s)Y_t\)</span> with the parameter <span class="math inline">\(s \in(0,1)\)</span>, the marginal propension to save. It follows that aggregate savings is given by: <span class="math inline">\(S_t=sY_t\)</span>. We also assume that households supply a fixed amount of labor.</p>
+<p>Population <span class="math inline">\(N_t\)</span> grows at a given and fixed rate <span class="math inline">\(n\)</span> (so that labor supply continuously grows). The good <span class="math inline">\(Y\)</span> can be either consumed or transformed into capital stock through investment. The production function <span class="math inline">\(Y_t=F(K_t,A_tLt)\)</span> is homogeneous of degree 1 (i.e.&nbsp;linear homogeneity), satisfies Inada conditions, is increasing and concave in its arguments. <span class="math inline">\(L_t\)</span> is labor used to produced <span class="math inline">\(Y_t\)</span> while <span class="math inline">\(A_t\)</span> represents exogenous technical progress and grows at an exogenous rate <span class="math inline">\(g\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Without loss of generality,[^we could indeed provide a full, but more complex, analysis just using the property given above.] we can assume a Cobb-Douglas production function <span class="math inline">\(Y_t=K_t^{\alpha}(A_t L_t)^{1-\alpha}\)</span> where <span class="math inline">\(\alpha \in(0,1)\)</span> is the output elasticity of capital (i.e.&nbsp;the percentage increase in output after a one-percent change in capital stock). Because of linear homogeneity, <span class="math inline">\(\alpha\)</span> is also the capital income share (or the percentage capital income earned in the production process).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Altough <span class="math inline">\(A_t\)</span> is called “technical (or technological) progress”, keep in mind that this is a catch-up variable and does not capture only the technological level of a country. Indeed, a more agnostic interpretation would also include political stability, quality of institutions such as laws, patents and so on.</p>
+</div>
+</div>
+<p>The economy is competitive (there is no market power or externalities). The model focus on a closed economy (no exporations or importations). There is no government intervention and the economy is at full employment such that <span class="math inline">\(L_t=N_t\)</span>. These assumptions are inoffensive to the main conclusions we’ll get thereafter.</p>
+</section>
+<section id="solving-the-model" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="solving-the-model"><span class="header-section-number">5.4</span> Solving the model</h2>
+<p>The good market implies that <span class="math inline">\(S_t=I_t\)</span> at each date. Hence, we may write:</p>
+<p><span id="eq-aggregate-equilibrium"><span class="math display">\[
+K_{t+1}=sY_t+(1-\delta)K_t
+\tag{5.3}\]</span></span></p>
+<p>Since <span class="math inline">\(C_t=Y_t-I_t=(1-s)Y_t\)</span> and <span class="math inline">\(Y_t=F(K_t,A_tL_t)\)</span> with <span class="math inline">\(A_t\)</span> and <span class="math inline">\(L_t\)</span> evolving exogenously, it is enough to use Equation (<a href="#eq-aggregate-equilibrium" class="quarto-xref"><span>5.3</span></a>) to describe the whole trajectory of the economy, although we cannot provide a solution of this equation. To do so, we need to rewrite ([-#eq-aggregate-equilibrium]) in effective labor unit. Denote GDP in effective labor <span class="math inline">\(\tilde{y}_t=\frac{Y_t}{A_tL_t}\)</span> and effective labor capital stock <span class="math inline">\(\tilde{k}_t=\frac{K_t}{A_t L_t}\)</span>, then we can derive:</p>
+<p><span class="math display">\[
+\frac{K_{t+1}}{A_t L_t}=\frac{sY_t+(1-\delta)K_t}{A_t L_t}=s\tilde{y_t}+(1-\delta)\tilde{k}_t
+\]</span></p>
+<p>Using the assumption on the evolution of population and technical progress (e.g.&nbsp;<span class="math inline">\(L_{t+1}=(1+n)L_t\)</span> and <span class="math inline">\(A_{t+1}=(1+g)A_t)\)</span>:</p>
+<p><span class="math display">\[
+\frac{A_{t+1}L_{t+1}}{A_t L_t}\frac{K_{t+1}}{A_{t+1}L_{t+1}}=(1+n)(1+g)\tilde{k}_{t+1}=s\tilde{y_t}+(1-\delta)\tilde{k}_t
+\]</span></p>
+<p>To get rid of <span class="math inline">\(\tilde{y}_t\)</span>, we use the production function:</p>
+<p><span class="math display">\[
+\frac{Y_t}{A_tL_t}=\tilde{y}_t=\frac{K_t^{\alpha}(A_tL_t)^{1-\alpha}}{A_{t}L_{t}}=\left(\frac{K_t}{A_t L_t}\right)^{\alpha}\left(\frac{A_t L_t}{A_t L_t}\right)^{1-\alpha}=\tilde{k}_t^{\alpha}
+\]</span></p>
+<p>The evolution of the capital stock in terms of effective labor is then:</p>
+<p><span id="eq-fundamental-solow"><span class="math display">\[
+(1+n)(1+g)\tilde{k}_{t+1}=s\tilde{k}_t^{\alpha}+(1-\delta)\tilde{k}_t
+\tag{5.4}\]</span></span></p>
+<p>Equation (<a href="#eq-fundamental-solow" class="quarto-xref"><span>5.4</span></a>) is the “fundemental Solow equation”, which is a non-linear first-order difference equation in <span class="math inline">\(\tilde{k}_t\)</span>. It displays two difference forces in the evolution of this variable. On the first hand, capital stock in terms of effective labor increases as households save (and therefore invest) more, that is the higher <span class="math inline">\(s\tilde{k}_t^{\alpha}\)</span>. On the other hand, at each period, the capital stock in terms of effective labor depletes because of physical depreciation (effect of <span class="math inline">\(\delta\)</span>) but also because there are more people (<span class="math inline">\(L_t\)</span> increasing at rate <span class="math inline">\(n\)</span>) and that workers are more efficient (<span class="math inline">\(A_t\)</span> increasing at rate <span class="math inline">\(g\)</span>). <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> To say it differently, as there are more productive <span class="math inline">\(\frac{K_{t+1}}{A_{t+1}L_{t+1}}\)</span> decreases. Hence, the economy requires to invest more to keep <span class="math inline">\(\tilde{k}_{t+1}\)</span> higher.</p>
+<p>We derive the steady state by putting <span class="math inline">\(\tilde{k}_{t+1}=\tilde{k}_t=\tilde{k}^*\)</span> and solving Equation (<a href="#eq-fundamental-solow" class="quarto-xref"><span>5.4</span></a>):<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p><span class="math display">\[\begin{aligned}
+&amp;(1+n)(1+g)\tilde{k}^*=s\left(\tilde{k}^*\right)^{\alpha}+(1-\delta)\tilde{k}^* \\ &amp; \Rightarrow (\delta +n+g +ng)\tilde{k}^*=s\left(\tilde{k}^*\right)^{\alpha} \\
+&amp;\Rightarrow \tilde{k}^*=\left(\frac{s}{\delta+n+g}\right)^{\frac{1}{1-\alpha}}
+\end{aligned}\]</span></p>
+<div id="2749296c" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>s,alpha,delta,n,g<span class="op">=</span><span class="fl">0.2</span>,<span class="fl">0.33</span>,<span class="fl">0.5</span>,<span class="fl">0.05</span>,<span class="fl">0.1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span>np.linspace(<span class="fl">0.01</span>,<span class="dv">1</span>,<span class="dv">100</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intensive_prod_func(kt,alpha):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> kt<span class="op">**</span>(alpha)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>LHS<span class="op">=</span>(s<span class="op">*</span>intensive_prod_func(k,alpha)<span class="op">+</span>(<span class="dv">1</span><span class="op">-</span>delta)<span class="op">*</span>k)<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>n)<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>g)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.plot(k,LHS,label<span class="op">=</span><span class="vs">r'(sf(k)+(1-\delta))/(1+n)*(1+g)'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.plot(k,k,label<span class="op">=</span><span class="st">'k'</span> )</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'\tilde</span><span class="sc">{k}</span><span class="vs">'</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Solow_files/figure-html/cell-2-output-1.png" width="571" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that the steady state stock of capital in terms of effective labor is increasing with respect to the marginal propension to save <span class="math inline">\(s\)</span> and is decreasing with respect to the depreciation rate, the population growth rate <span class="math inline">\(n\)</span> and the technical progress growth rate <span class="math inline">\(g\)</span>. The remaining steady state variable of interest are:</p>
+<p><span class="math display">\[\begin{aligned}
+\tilde{y}^*=\left(\tilde{k}^*\right)^{\alpha}= \left(\frac{s}{\delta+n+g}\right)^{\frac{\alpha}{1-\alpha}}, \quad \tilde{c}^*=(1-s)\left(\tilde{k}^*\right)^{\alpha}= \left(\frac{s}{\delta+n+g}\right)^{\frac{\alpha}{1-\alpha}}
+\end{aligned}
+\]</span></p>
+<p>Note that taking first-order approximation of Equation (<a href="#eq-fundamental-solow" class="quarto-xref"><span>5.4</span></a>) in the neighborhood of the steady state implies that <span class="math inline">\(|\frac{d\tilde{k}_{t+1}}{d\tilde{k}_t}|&lt;1\)</span> and provides stability.</p>
+</section>
+<section id="growth-rates" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="growth-rates"><span class="header-section-number">5.5</span> Growth rates</h2>
+<p>It is important to understand that by definition the growth rates of <span class="math inline">\(\tilde{k}_t\)</span>, <span class="math inline">\(\tilde{y}_t\)</span> and <span class="math inline">\(\tilde{c}_t\)</span> are zero when the economy reaches the steady state<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. However, by definition of the variables in term of effective labor, we have:</p>
+<p><span class="math display">\[
+\begin{aligned}
+K_t=A_tL_t\tilde{k}_t,&amp;&amp; Y_t=A_tL_t\tilde{y}_t, &amp;&amp; C_t=A_tL_t\tilde{c}_t \\
+k_t=A_t\tilde{k}_t, &amp;&amp; y_t=A_t\tilde{y}_t, &amp;&amp; c_t= A_t\tilde{c}_t
+\end{aligned}
+\]</span></p>
+<p>Where <span class="math inline">\(k_t\)</span>, <span class="math inline">\(y_t\)</span> and <span class="math inline">\(c_t\)</span> are per capita capital stock, per capita GDP and per capita consumption.</p>
+<p>Hence, as <span class="math inline">\(\tilde{k} \rightarrow \tilde{k}^*\)</span>, aggregate variable <span class="math inline">\(K_t\)</span>, <span class="math inline">\(Y_t\)</span> and <span class="math inline">\(C_t\)</span> grow at rate <span class="math inline">\(n+g\)</span> while per capita variables <span class="math inline">\(k_t\)</span>, <span class="math inline">\(y_t\)</span> and <span class="math inline">\(c_t\)</span> grow at rate <span class="math inline">\(g\)</span>. Indeed for the aggregate GDP:<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p><span class="math display">\[\begin{aligned}
+&amp;ln(Y_{t+1}) = ln(A_{t+1})+ln(L_{t+1})+ln({\tilde{y}}^*) \\
+&amp;\Rightarrow ln(Y_{t+1})-ln(Y_t) \equiv ln(1+g_Y) = ln(A_{t+1})-ln(A_t)+ln(L_{t+1})-ln(L_t)  \\
+&amp; \Rightarrow g_y=n+g
+\end{aligned}\]</span></p>
+<p>Similarly for the GDP per capita:</p>
+<p><span class="math display">\[
+ln(y_{t+1})-ln(y_t)=g
+\]</span></p>
+<p>It is easily verified (and automatically satisfy by the properties of the BGP) that <span class="math inline">\(K_t\)</span> and <span class="math inline">\(C_t\)</span> also grow at rate <span class="math inline">\(n+g\)</span> and <span class="math inline">\(k_t\)</span> and <span class="math inline">\(c_t\)</span> grow at rate <span class="math inline">\(g\)</span>.</p>
+<p>Now we can understand why the conclusions of Solow are important. As economists studying growth, we are interested into growth in per capita quantities. Assuming away technical progress (by putting <span class="math inline">\(g=0\)</span>) implies that the per capita variable reach the steady state and stop to grow, which is at odd with what is observed in the data. Another way to say it, growth through an extensive process (increasing private inputs such as capital stock and labor, as hours of work or number of people working) cannot be a source of persistent growth. This is a direct consequence of marginal decreasing returns of capital: even in the favorable situation of linear homogeneity of the production (e.g.&nbsp;doubling all inputs doubles output), GDP per capita has decreasing returns in terms of stock of capital per capita meaning that any increase in <span class="math inline">\(k_t\)</span> makes GDP larger but less and less. To explain persistent growth, this requires an additional variables which is exogenous in the model and takes the form of the catch-up variable <span class="math inline">\(A_t\)</span>, the so-called technological progress.</p>
+</section>
+<section id="transitional-dynamics" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="transitional-dynamics"><span class="header-section-number">5.6</span> Transitional dynamics</h2>
+<p>We can use Equation (<a href="#eq-fundamental-solow" class="quarto-xref"><span>5.4</span></a>) to study growth rate outside of the steady state. Rewrite it such that:</p>
+<p><span class="math display">\[\begin{aligned}
+&amp; \Delta\tilde{k}_{t+1}  \equiv \tilde{k}_{\mathrm{t}+1}-\tilde{k}_{\mathrm{t}}  =\frac{s \tilde{k}_t+(1-\delta) \tilde{k}_{\mathrm{t}}-(1+n+g+n g) \tilde{k}_{\mathrm{t}}}{(1+n)(1+g)} \\ &amp;   = \frac{s f\left(\tilde{k}_{\mathrm{t}}\right)-(\delta+n+g+n g) \tilde{k}_{\mathrm{t}}}{(1+n)(1+g)}   \simeq s \tilde{k}^{\alpha}-(\delta+n+g) \tilde{k}_{\mathrm{t}} \\  &amp;  \Rightarrow g_{\tilde{k}}  \equiv \frac{\Delta \tilde{k}_{\mathrm{t}+1}}{\tilde{k}_{\mathrm{t}}}  \simeq s\tilde{k}_t^{\alpha-1}-(\delta+n+g)
+\end{aligned}\]</span></p>
+<div id="4ba49a7d" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>g<span class="op">=</span>np.zeros((<span class="dv">100</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>gk<span class="op">=</span>(s<span class="op">*</span>k<span class="op">**</span>(alpha<span class="op">-</span><span class="dv">1</span>)<span class="op">-</span>(delta<span class="op">+</span>n<span class="op">+</span>g))<span class="op">/</span>((<span class="dv">1</span><span class="op">+</span>n)<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>g))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.hlines(<span class="fl">0.01</span>,<span class="dv">0</span>,<span class="dv">1</span>,linestyles<span class="op">=</span><span class="st">'--'</span>,colors<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.plot(k,gk,label<span class="op">=</span><span class="vs">r'$g_\tilde</span><span class="sc">{k}</span><span class="vs">$'</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'\tilde</span><span class="sc">{k}</span><span class="vs">'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'g_{\tilde</span><span class="sc">{k}</span><span class="vs">}'</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Solow_files/figure-html/cell-3-output-1.png" width="582" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Since the first term on the right hand side is decreasing in <span class="math inline">\(\tilde{k}_t\)</span>, for any <span class="math inline">\(\tilde{k}_t&lt;\tilde{k}^*\)</span>, the growth rate of <span class="math inline">\(\tilde{k}, g_{\tilde{k}}\)</span> is positive and decreases (and conversely for any <span class="math inline">\(\tilde{k}_t&gt;\tilde{k}^*\)</span>).</p>
+</section>
+<section id="behavior-of-the-interest-rate-and-the-wage-rate" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="behavior-of-the-interest-rate-and-the-wage-rate"><span class="header-section-number">5.7</span> Behavior of the interest rate and the wage rate</h2>
+<p>Let us look at the firms’ profit maximization problem:</p>
+<p><span class="math display">\[
+\pi= \max_{K(t),L(t)} \{K(t)^{\alpha}\left(A(t)L(t) \right)^{1-\alpha}-w(t)L(t)-(r(t)+\delta) K(t)
+\]</span> whose first-order conditions are:</p>
+<p><span id="eq-prices"><span class="math display">\[\begin{aligned}
+\alpha K^{\alpha-1}\left( A(t)L(t)\right)^{1-\alpha}=\alpha \left(\frac{K(t)}{A(t)L(t)}\right)^{\alpha-1} \equiv \alpha \tilde{k}(t)^{\alpha-1}= r(t)+\delta \\
+(1-\alpha) K^{\alpha} A(t)^{1-\alpha} L(t)^{-\alpha}=(1-\alpha)A(t) \left(\frac{K(t)}{A(t)L(t)}\right)^{\alpha} \equiv (1-\alpha)A(t) \tilde{k}(t)^{\alpha}= w(t)
+\end{aligned} \tag{5.5}\]</span></span></p>
+<p>Equations in (<a href="OLG.html#eq-prices" class="quarto-xref"><span>7.1</span></a>) show two different properties for factor prices. In particular, the interest rate depends only on the effective capital stock while the wage rate depends on both effective capital stock and (proportionaly) technical progress. As a result, when the economy reaches the steady state, the interest rate becomes constant while the wage rate grows at the same rate than the equilibrium growth rate of per capital GDP, capital stock and consumption.</p>
+</section>
+<section id="the-golden-rule" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="the-golden-rule"><span class="header-section-number">5.8</span> The Golden Rule</h2>
+<p>We have seen that the steady state effective capital stock and consumption are given by:</p>
+<p><span class="math display">\[
+k^{*}=\left(\frac{s}{\delta+n+g}\right)^{\frac{1}{1-\alpha}}, \quad c^*=(1-s)\left(\frac{s}{\delta+n+g}\right)^{\frac{1}{1-\alpha}}
+\]</span></p>
+<p>For given parameters others than <span class="math inline">\(s\)</span>, we can note that the saving rate as contradictory effect on <span class="math inline">\(c^*\)</span>: one the first hand, a decrease in <span class="math inline">\(s\)</span> increase the share of consumption given by <span class="math inline">\((1-s)\)</span> but it also reduces the effective capital stock at the steady state, and therefore the amount produced. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<p>The question is then: does it exist a saving rate that maximizes steady state consumption ? Regarding the previous paragraph, the answer is a definitive “yes” as shown below. Define <span class="math inline">\(c(s)=c^*(s)\)</span> and <span class="math inline">\(k(s)=k^*(s)\)</span> (that is recognize that steady state consumption and capital stock depends on the saving rate), then:</p>
+<p><span class="math display">\[
+c^{GR}: \max_{s} \{c(s)=k(s)^{\alpha} -(\delta+n+g)k(s)\}
+\]</span> which gives:</p>
+<p><span class="math display">\[
+\alpha k(s)^{\alpha-1}\frac{\partial k(s)}{\partial s}=(\delta+n+g) \frac{\partial k(s)}{\partial s} \Rightarrow  k^{GR}=\left(\frac{\alpha}{\delta+n+g} \right)^{\frac{1}{1-\alpha}}
+\]</span></p>
+<p>the Golden rule states that maximum steady state of consumption is obtained if the marginal product of capital is equal to the economic rate of depletion of capital stock <span class="math inline">\(\delta+n+g\)</span>. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> One can show that the golden rule is generically not satisfied, unless <span class="math inline">\(s=\alpha\)</span>. If <span class="math inline">\(\alpha&lt;s\)</span> (respectively <span class="math inline">\(s&lt;\alpha\)</span>) then, the economy over-accumulates capital stock (<span class="math inline">\(k^*&gt;k^{GR}\)</span>) (respectively under-accumulate capital stock, <span class="math inline">\(k^{*}&lt;k^{GR}\)</span>).</p>
+<p>Satisfying or not the golden rule is important as it has consequences on future cohorts of unborn yet people (and therefore intergenerational equity issues): too low savings means that current living households should increase the rate at which they are saving and accumulating capital while too high savings means we can at the same time increase consumption and capital accumulation. While the former characterizes under-accumulation of capital , the latter represents over-accumulation of capital. This can be summarized by the concept of dynamic efficiency.</p>
+<div id="def-dynamic-efficiency" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.2</strong></span> Dynamic efficiency is a situation where an economy under-accumulates capital stock, that is <span class="math inline">\(k^*&lt;k^{GR}\)</span> while a dynamic inefficient economy over-accumulates capital stock, that is <span class="math inline">\(k^{*}&gt;k^{GR}\)</span>.</p>
+</div>
+</section>
+<section id="growth-accounting" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="growth-accounting"><span class="header-section-number">5.9</span> Growth Accounting</h2>
+<p>Having achieved the analysis, we can use the structure of the model to measure the contributions of each factor to growth of the GDP per capita.</p>
+<p>From the production function <span class="math inline">\(Y=K^{\alpha}(AL)^{1-\alpha}\)</span>, take logs and differentiate to get it in terms of growth rates:</p>
+<p><span class="math display">\[
+g_Y=\alpha g_K+(1-\alpha)(n+g) \\
+g_Y-n=g_y=\alpha (g_K-n)+(1-\alpha)g
+\]</span> Note that we can easily find data describing growth rates of GDP per capita <span class="math inline">\(g_y\)</span>, capital stock <span class="math inline">\(g_K\)</span> and demographic growth <span class="math inline">\(n\)</span>. Furthermore, <span class="math inline">\(\alpha\)</span> is the capital income share and is around <span class="math inline">\(\alpha=0.3\)</span>. Hence, we can solve this relationship for <span class="math inline">\(g\)</span> and plug in values:</p>
+<p><span class="math display">\[
+g= \frac{1}{1-\alpha}g_y-\frac{\alpha}{1-\alpha}(g_K-n)
+\]</span></p>
+<p>Once you obtain estimated values of <span class="math inline">\(g\)</span>, let’s write <span class="math inline">\(\hat{g}\)</span>, then the contribution to growth of GDP per capita can be computed:</p>
+<p><span class="math display">\[
+g_y=\alpha(g_K-n)+(1-\alpha)\hat{g}
+\]</span> The first term on the RHS is the effect of capital stock per capita and contributes around one third to the growth rate of GDP per capita while the second term is the effect of productivity and contributes up to two-third of GDP per capita growth.</p>
+</section>
+<section id="appendix" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="appendix"><span class="header-section-number">5.10</span> Appendix</h2>
+<section id="deriving-the-general-production-function-for-gdp-per-capita-and-effective-labor-gdp" class="level3" data-number="5.10.1">
+<h3 data-number="5.10.1" class="anchored" data-anchor-id="deriving-the-general-production-function-for-gdp-per-capita-and-effective-labor-gdp"><span class="header-section-number">5.10.1</span> Deriving the general production function for GDP per capita and effective labor GDP</h3>
+<p>Consider the general production function <span class="math inline">\(Y_t=F(K_t,A_tL_t)\)</span>. Since it has homogeneity of degree one, we can write:</p>
+<p><span class="math display">\[
+Y_t=F(A_t L_t \tilde{k},A_t L_t)=A_tL_tF(\tilde{k}_t,1)=A_t L_t f(\tilde{k}_t) \Rightarrow \tilde{y}_t=f(\tilde{k}_t)
+\]</span></p>
+<p>With <span class="math inline">\(f'(\tilde{k}_t)&gt;0\)</span> and <span class="math inline">\(f''(\tilde{k}_t)&lt;0\)</span>, that is the production function in intensive form is increasing and concave.</p>
+<p>Obviously, if we study per capita GDP, you get:</p>
+<p><span class="math display">\[
+\frac{Y_t}{L_t}=y_t=\frac{f(K_t,A_t L_t)}{L_t}=f(\frac{K_t}{L_t},A_t)=f(k_t,A_t)
+\]</span></p>
+<p>We can also derive useful expressions for the interest rate and the wage rate:</p>
+<p><span class="math display">\[
+\pi_t=A_tL_tf(\tilde{k}_t)-w_t L_t-rK_t
+\]</span></p>
+<p>Marginal productivity of capital equations the interest rate:</p>
+<p><span class="math display">\[
+\frac{\partial \pi_t}{\partial K_t}=0 \Rightarrow A_t L_t f'(\tilde{k}_t)\frac{\partial \tilde{k}_t}{\partial K_t}=r_t \\
+\Rightarrow A_t L_t f'(\tilde{k}_t)\frac{1}{A_tL_t}=r_t \Rightarrow f'(\tilde{k}_t)=r_t
+\]</span> Marginal productivity of labor equates the wage rate:</p>
+<p><span class="math display">\[\begin{aligned}
+\frac{\partial \pi_t}{\partial L_t}=0  &amp;\Rightarrow A_t f(\tilde{k}_t) + A_t L_t f'(\tilde{k}_t)\frac{\partial \tilde{k}_t}{\partial L_t}=w_t \\
+&amp; \Rightarrow A_t f(\tilde{k}_t) - A_t L_t f'(\tilde{k}_t)\frac{K_t}{A_t L_t^2}= A_t \left(f(\tilde{k}_t) - f'(\tilde{k}_t)\frac{K_t}{A_t L_t}\right) \\
+&amp;  \Rightarrow A_t(f(\tilde{k}_t)-\tilde{k}_tf'(\tilde{k}_t))=w_t
+\end{aligned}\]</span></p>
+</section>
+<section id="the-model-in-continuous-time" class="level3" data-number="5.10.2">
+<h3 data-number="5.10.2" class="anchored" data-anchor-id="the-model-in-continuous-time"><span class="header-section-number">5.10.2</span> The model in continuous-time</h3>
+<p>The equation for aggregate capital accumulation is now:</p>
+<p><span id="eq-continuous-acck"><span class="math display">\[
+\dot{K}(t)=I(t)-\delta K(t)
+\tag{5.6}\]</span></span></p>
+<p>Demographic changes and technological change are given by:<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<p><span class="math display">\[
+\dot{L}(t)=nL(t), \quad \dot{A}(t)=g A(t)
+\]</span> and the production function is given by: <span class="math inline">\(Y(t)=K(t)^{\alpha}\left(A(t)L(t) \right)^{1-\alpha}\)</span>.</p>
+<p>Households save a fraction <span class="math inline">\(s\in(0,1)\)</span> of their income.</p>
+<p>Using the good market equilibrium condition <span class="math inline">\(I(t)=S(t)\Rightarrow I(t)=sY(t)\)</span> into Equation (<a href="#eq-continuous-acck" class="quarto-xref"><span>5.6</span></a>), we get:</p>
+<p><span class="math display">\[
+\dot{K}(t)=sY(t)-\delta K(t) =s K(t)^{\alpha}\left(A(t)L(t) \right)^{1-\alpha}-\delta K(t)
+\]</span> As in the discrete time version, we want to express the evolution of the capital stock in term of effective labor <span class="math inline">\(\dot{\tilde{k}}(t)\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+\dot{\tilde{k}}(t)=\dot{\left( \frac{K(t)}{A(t)L(t)}\right)}= &amp; \frac{\dot{K}(t)A(t)L(t)-K(t)(\dot{A}(t)L(t)+A(t)\dot(L)(t))}{(A(t)L(t))^2} \\
+&amp;  = \frac{\dot{K}(t)}{A(t)L(t)}-\frac{K(t)}{A(t)L(t)}\left(\frac{\dot{A}(t)}{A(t)}+\frac{\dot{L}(t)}{L(t)}\right)\\
+&amp;= \frac{\dot{K}(t)}{A(t)L(t)}-\left(n+g\right)\tilde{k}(t) \\
+&amp; = \frac{s K(t)^{\alpha}\left(A(t)L(t) \right)^{1-\alpha}-\delta K(t)}{A(t)L(t)}-\left(n+g\right)\tilde{k}(t)\\
+&amp; = s\tilde{k}(t)^{\alpha}-(\delta+n+g)\tilde{k}(t)
+\end{aligned}
+\]</span></p>
+<p>The steady state is obtained by equation <span class="math inline">\(\dot{\tilde{k}}(t)=0\)</span> and <span class="math inline">\(\tilde{k}(t)=\tilde{k}^*\)</span> and gives:</p>
+<p><span class="math display">\[
+\tilde{k}^*=\left(\frac{s}{\delta+n+g}\right)^{\frac{1}{1-\alpha}}
+\]</span></p>
+<p>which is equivalent to the discrete time version of the model.</p>
+<p>The GDP per capita and its growth rate are given by:</p>
+<p><span class="math display">\[
+y(t)=k(t)^{\alpha}A(t)^{1-\alpha} \Rightarrow \frac{\dot{y}(t)}{y(t)}=\alpha \frac{\dot{k}(t)}{k(t)}+(1-\alpha)g
+\]</span></p>
+<p>which implies that <span class="math inline">\(g_y=g_k=g\)</span> using the BGP properties.</p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Note that some of these facts have evolved in recent years, in particular the stability of income shares. Furthermore, additional facts can be included. See the excellent chapter of Jones (2005) in the Handbook of Economic Growth.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In continuous time, this equation writes: <span class="math inline">\(\dot{K}(t)=I(t)-\delta K(t)\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Introducing technical progress as we did is called “Harrod-neutral”. The two other for of technological progress are “Hick-Neutral” (<span class="math inline">\(Y_t=A_tF(K_t,L_t)\)</span>) and “Solow-Neutral” (<span class="math inline">\(Y_t=F(A_tK_t,L_t)\)</span>) but are not compatible with balanced-growth.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This can be seen as the RHS can be divided by <span class="math inline">\((1+n)(1+g)\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Note that when developing <span class="math inline">\((1+n)(1+g)\)</span>, we considered that <span class="math inline">\(ng\approx 0\)</span> because both are close to 0 enough.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>This can be seen by dividing Equation (<a href="#eq-fundamental-solow" class="quarto-xref"><span>5.4</span></a>) by <span class="math inline">\(\tilde{k}_t\)</span> on both sides and noting that <span class="math inline">\(\frac{\tilde{k}_{t+1}}{\tilde{k}_t}=(1+g_{\tilde{k}})\)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Note that for any variable <span class="math inline">\(x_t\)</span> that grows at variable <span class="math inline">\(g_x\)</span> such that <span class="math inline">\(x_{t}=(1+g_x)x_{t-1} \Rightarrow ln(x_t)-ln(x_{t-1})=ln(1+g_x)\approx g_x\)</span>. We could also directly take the ratio <span class="math inline">\(Y_{t+1}/Y_t=1+g_Y=(1+n)(1+g) \approx 1+ n+g\)</span>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Note that this is independent of considering population growth or growth technical progress.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>In a more general setup, without specifying the production function <span class="math inline">\(f(k)\)</span>, the golden rule is given by: <span class="math inline">\(f'(k^{GR})= (\delta+n+g)\)</span><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>The solution of this exogenous process are respectively <span class="math inline">\(L(t)=e^{nt}\)</span> and <span class="math inline">\(A(t)=e^{gt}\)</span>.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Intertemporal-Optimization.html" class="pagination-link" aria-label="Intertemporal Optimization">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Intertemporal Optimization</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Ramsey.html" class="pagination-link" aria-label="The Ramsey-Cass-Koopmans Model">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Ramsey-Cass-Koopmans Model</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

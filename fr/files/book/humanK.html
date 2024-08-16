@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Human capital and Growth (Lucas, 1988) – Notes in Economic Growth and Fluctuations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./horizontal-innovations.html" rel="next">
+<link href="./AK.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./AK.html">Endogenous Growth Theory</a></li><li class="breadcrumb-item"><a href="./humanK.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Human capital and Growth (Lucas, 1988)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Notes in Economic Growth and Fluctuations</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ODE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ordinary Differentials Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./differenceq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Difference Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intertemporal-Optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Intertemporal Optimization</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Benchmark Models in Growth and Fluctuations Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Solow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Solow Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ramsey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Ramsey-Cass-Koopmans Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./OLG.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Overlapping Generations Model</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Endogenous Growth Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./AK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The AK model - Spillovers à la Romer(1986)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./humanK.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Human capital and Growth (Lucas, 1988)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./horizontal-innovations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Horizontal Innovations and Model of Expanding Varieties (Romer, 1990)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vertical-innovations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vertical innovations and Model of Quality Ladders (Grossman-Helpman ,1991; Aghion and Howitt 1992)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">9.1</span> Introduction</a></li>
+  <li><a href="#the-model" id="toc-the-model" class="nav-link" data-scroll-target="#the-model"><span class="header-section-number">9.2</span> the Model</a></li>
+  <li><a href="#equilibrium-and-balanced-growth-path" id="toc-equilibrium-and-balanced-growth-path" class="nav-link" data-scroll-target="#equilibrium-and-balanced-growth-path"><span class="header-section-number">9.3</span> Equilibrium and Balanced Growth Path</a></li>
+  <li><a href="#comparative-statics" id="toc-comparative-statics" class="nav-link" data-scroll-target="#comparative-statics"><span class="header-section-number">9.4</span> Comparative statics</a></li>
+  <li><a href="#kaldor-stylized-facts-and-first-models-of-endogenous-growth" id="toc-kaldor-stylized-facts-and-first-models-of-endogenous-growth" class="nav-link" data-scroll-target="#kaldor-stylized-facts-and-first-models-of-endogenous-growth"><span class="header-section-number">9.5</span> Kaldor stylized facts and first models of endogenous growth</a></li>
+  <li><a href="#further-comments" id="toc-further-comments" class="nav-link" data-scroll-target="#further-comments"><span class="header-section-number">9.6</span> Further comments</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./AK.html">Endogenous Growth Theory</a></li><li class="breadcrumb-item"><a href="./humanK.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Human capital and Growth (Lucas, 1988)</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Human capital and Growth (Lucas, 1988)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">9.1</span> Introduction</h2>
+<p>In contrast to the models presented so far, Lucas (1988) assumes that there are two types of assets endogenously accumulated in the economy, physical capital and human capital. The idea is very simplistic and says that in addition to producing, for instance, more infrastructure we also produce better (or more) educated workers. The better educated workers, then, produce more, while using the same amount of labor. Therefore, the labor productivity increases, and this, together with the capital accumulation, may enable long run growth.</p>
+<p>It is worth emphasizing that the biggest difference between Romer (1986) and Lucas (1988) models is that the latter endogenizes the process of labor productivity growth through human capital accumulation, when the former thinks of spillover effects.</p>
+<p>If presented in one sector form, the final good production side and the asset accumulation processes of Lucas (1988) model can be written as</p>
+<p><span class="math display">\[
+Y=A K^{\alpha} H^{1-\alpha}=C+I_{K}+I_{H}
+\]</span></p>
+<p>where <span class="math inline">\(H\)</span> is the human capital input, <span class="math inline">\(I_{K}\)</span> and <span class="math inline">\(I_{H}\)</span> are the investments for physical capital and human capital accumulation, i.e.,</p>
+<p><span class="math display">\[
+\begin{aligned}
+I_{K} &amp; =\dot{K}+\delta_{K} K \\
+I_{H} &amp; =\dot{H}+\delta_{H} H
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\delta_{K}\)</span> is the depreciation rate physical capital and <span class="math inline">\(\delta_{H}\)</span> is the depreciation rate of human capital. Given that we consider an equilibrium where both assets are accumulated, the returns to both assets should be equal. For the current exercise let <span class="math inline">\(\delta_{K}=\delta_{H} \equiv \delta\)</span>. This would imply that,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial Y}{\partial K}-\delta &amp; =\frac{\partial Y}{\partial H}-\delta \Rightarrow \\
+\alpha \frac{Y}{K} &amp; =(1-\alpha) \frac{Y}{H} \Rightarrow \\
+H &amp; =\frac{1-\alpha}{\alpha} K \Rightarrow \\
+Y &amp; =\left[A\left(\frac{1-\alpha}{\alpha}\right)^{1-\alpha}\right] K
+\end{aligned}
+\]</span></p>
+<p>Thus, in terms of structure, the ideas behind the Romer (1986) and Lucas (1988) models are quite similar. Both end up having an aggregate production function with non-decreasing returns to scale, and in particular linear in capital. However, Romer (1986) introduces internal spillover while Lucas (1988) considers external effects through human capital accumulation.</p>
+<p>This one sector model was a simple representation of Lucas (1988). The model with corresponding assumptions is the following.</p>
+</section>
+<section id="the-model" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="the-model"><span class="header-section-number">9.2</span> the Model</h2>
+<p>This is a two-sector model of growth, where the physical capital is still produced with the same technology as the consumption good, but human capital is produced with a different technology. Human capital is the essential input for the production of new human capital. The motivation for this is that the human capital of one generation is an important factor in affecting the formation of human capital of the later generations. If the production of human capital is within a household, that would be the human capital “embodied” in the parents. If its production is through formal education, then that would be the human capital of the teachers with their methodologies (e.g., books). The accumulation (production) of human capital <span class="math inline">\(H\)</span> follows a law of motion:</p>
+<p><span class="math display">\[
+\dot{H}=B H_{H}-\delta_{H} H,
+\]</span></p>
+<p>where <span class="math inline">\(H_{H}\)</span> is the human capital used for its own production. Every unit of human capital produces <span class="math inline">\(B&gt;0\)</span> new units of human capital. This stock depreciates at a rate <span class="math inline">\(\delta_{H}&gt;0\)</span> (e.g., due to “aging” for instance).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are no diminishing returns to the production of human capital with this type of production function for the human capital. The non-decreasing returns to the production of human capital will be the engine of long-run growth in this model. The increasing stock of human capital drives the accumulation of physical capital and the economy grows indefinitely. If, instead, the production of human capital had decreasing returns to its input, this model would have the same predictions as the Solow-Swan model and it would not be able explain growth in the long-run.</p>
+</div>
+</div>
+<p>The production of final output combines physical capital stock and human capital <span class="math inline">\(H_{Y}\)</span>, i.e., <span class="math inline">\(Y=A K^{\alpha} H_{Y}^{1-\alpha}\)</span>, where <span class="math inline">\(H_{Y}\)</span> is the human capital used in production of final good. Standard neoclassical assumptions apply.</p>
+<p>The representative household chooses its consumption path, the assets (physical and human capital) in the next period and the allocation of its human capital input between final good and human capital production, in order to maximize its lifetime utility <span class="math inline">\(U=\int_{0}^{\infty} u(C) e^{-\rho t} d t\)</span>, subject to standard budget constraint and the law of motion of human capital, where <span class="math inline">\(u(C)=\frac{C^{1-\theta}-1}{1-\theta}\)</span>.</p>
+<p>Define the fraction of human capital used in the production of final output as <span class="math inline">\(u \equiv \frac{H_{Y}}{H}\)</span> and its complement <span class="math inline">\(1-u=\frac{H_H}{H}\)</span>. There are no externalities involved in the input and output markets. By the first welfare theorem it is known that the competitive equilibrium will achieve the first-best allocations. The second welfare theorem implies that one can directly solve for the optimal allocations, as there are prices that will support the competitive equilibrium that achieves such intratemporal and intertemporal allocations.</p>
+<p>The intertemporal allocation problem has two controls, consumption and allocation of human capital in the two sectors of production that compete for it. There are two state variables, human and physical capital. Physical capital accumulation requires the saving of output (consumption choices), while the human capital accumulation requires investments in terms of real resources that is to say some human capital needs to be driven out of the production of final output to produce future human capital.</p>
+<p>Having in mind the welfare theorems, the representative households problem is</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \max _{u, C} U=\int_{0}^{\infty} \frac{C^{1-\theta}-1}{1-\theta} e^{-\rho t} d t \\
+&amp; \text { s.t. } \\
+&amp; \dot{K}=A K^{\alpha}(u H)^{1-\alpha}-\delta_{K} K-C, \\
+&amp; \dot{H}=B(1-u) H-\delta_{H} H \\
+&amp; K(0), H(0)&gt;0\text { given. }
+\end{aligned}
+\]</span></p>
+<p>Let <span class="math inline">\(\lambda_{K}\)</span> and <span class="math inline">\(\lambda_{H}\)</span> be the shadow prices for the physical and human capital, respectively. The problem, if written in terms of current value Hamiltonian, is given by</p>
+<p><span class="math display">\[
+\max _{u, C} H_{L C}=\frac{C^{1-\theta}-1}{1-\theta}+q_{K}\left[A K^{\alpha}(u H)^{1-\alpha}-\delta_{K} K-C\right]+q_{H}\left[B(1-u) H-\delta_{H} H\right]
+\]</span></p>
+<p>The optimal rules are</p>
+<p><span id="eq-FOCHH"><span class="math display">\[
+\begin{aligned}
+&amp;  \ C^{-\theta} &amp; =&amp;  \lambda_{K} \text {, } \\
+&amp;  \lambda_{K}(1-\alpha) \frac{Y}{u} &amp; =&amp; \lambda_{H} B H, \\
+&amp;  \dot{\lambda}_{K}&amp; = &amp; \rho \lambda_{K}-\lambda_{K}\left(\alpha \frac{Y}{K}-\delta_{K}\right) \\
+&amp;   &amp;=  &amp; -\lambda_{K}\left(\alpha \frac{Y}{K}-\delta_{K}-\rho\right), \\
+&amp; \dot{\lambda}_{H} &amp; = &amp; \rho \lambda_{H} -\left\{\lambda_{K}(1-\alpha) \frac{Y}{H}+\lambda_{H}\left[B(1-u)-\delta_{H}\right]\right\} .
+\end{aligned}
+\tag{9.1}\]</span></span></p>
+<p>The standard transversality conditions apply for each of the state variables:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \lim _{t \rightarrow \infty} e^{-\rho t} \lambda_{K}(t) K(t)=0 \\
+&amp; \lim _{t \rightarrow \infty} e^{-\rho t} \lambda_{H}(t) H(t)=0
+\end{aligned}
+\]</span></p>
+<p>Using the first and third equations in (<a href="#eq-FOCHH" class="quarto-xref"><span>9.1</span></a>), it follows that</p>
+<p><span id="eq-euler"><span class="math display">\[
+\frac{\dot{C}}{C}=\frac{1}{\theta}\left(\alpha \frac{Y}{K}-\delta_{K}-\rho\right)
+\tag{9.2}\]</span></span></p>
+<p>While from the second and fourth equations, we get:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dot{\lambda}_{H} &amp; = \rho\lambda_{H} -\left\{\lambda_{H} \frac{B H}{(1-\alpha) \frac{Y}{u}}(1-\alpha) \frac{Y}{H}+\lambda_{H}\left[B(1-u)-\delta_{H}\right]\right\} \\
+&amp; =\rho \lambda_{H} -\left\{\lambda_{H} B u+\lambda_{H}\left[B(1-u)-\delta_{H}\right]\right\} \Rightarrow \\
+\dot{\lambda}_{H} &amp; =-\lambda_{H}\left(B-\delta_{H}-\rho\right)
+\end{aligned}
+\]</span></p>
+</section>
+<section id="equilibrium-and-balanced-growth-path" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="equilibrium-and-balanced-growth-path"><span class="header-section-number">9.3</span> Equilibrium and Balanced Growth Path</h2>
+<p>From the optimal consumption path (<a href="horizontal-innovations.html#eq-euler" class="quarto-xref"><span>10.8</span></a>) and that the growth rate of consumption at steady state should be constant, it follows that the aggregate output <span class="math inline">\(Y\)</span> and capital stock <span class="math inline">\(K\)</span> grow at the same rate, i.e., <span class="math inline">\(g_{K}=g_{Y}\)</span>. From the resource constraint (or the law of motion of capital) <span class="math inline">\(\frac{\dot{K}}{K}=\)</span> <span class="math inline">\(\frac{A K^{\alpha}(u H)^{1-\alpha}}{K}-\delta_{K}-\frac{C}{K}=\frac{Y}{K}-\delta_{K}-\frac{C}{K}\)</span> follows that in steady-state the consumption and capital grow at the same rate, i.e., <span class="math inline">\(g_{C}=g_{K}=g_{Y}\)</span>. From the production of human capital, given that <span class="math inline">\(B\)</span> and <span class="math inline">\(\delta_{H}\)</span> are constant parameters and in steady-state <span class="math inline">\(\frac{\dot{H}}{H}=\)</span> is constant, it follows that the share of human capital in production of final good is constant, i.e.,</p>
+<p><span id="eq-ushare"><span class="math display">\[
+\begin{aligned}
+\dot{H} &amp; =B(1-u) H-\delta_{H} H \Rightarrow \\
+u &amp; =1-\frac{g_{H}+\delta_{H}}{B}=\text { constant }
+\end{aligned}
+\tag{9.3}\]</span></span></p>
+<p>From the production of final good <span class="math inline">\(Y=A K^{\alpha}(u H)^{1-\alpha}\)</span> follows that</p>
+<p><span class="math display">\[
+\frac{Y}{K}=\frac{A K^{\alpha}(u H)^{1-\alpha}}{K}=A\left(u \frac{H}{K}\right)^{1-\alpha}
+\]</span></p>
+<p>Given that <span class="math inline">\(g_{K}=g_{Y}\)</span> and <span class="math inline">\(A, u=\)</span> const the growth rates of physical and human capital are equal, i.e., <span class="math inline">\(g_{K}=g_{H}=g_{C}=g_{Y} \equiv g\)</span>. From (31) and given that <span class="math inline">\(g_{H}=g_{Y}\)</span> and <span class="math inline">\(u, \alpha, B=\)</span> constant follows that</p>
+<p><span class="math display">\[
+\frac{\dot{\lambda}_{H}}{\lambda_{H}}=\frac{\dot{\lambda}_{K}}{\lambda_{K}}
+\]</span></p>
+<p>This result should not be a surprising result. Given that both human and physical capital should be accumulated in equilibrium, the rates of return on their accumulation <span class="math inline">\(\frac{\dot{\lambda}_{i}}{\lambda_{i}}(i=H, K)\)</span> should be equal. Otherwise, one of these assets will not be accumulated.</p>
+<p>This equality implies then that</p>
+<p><span class="math display">\[
+-\frac{\dot{\lambda}_{H}}{\lambda_{H}}=\left(B-\delta_{H}-\rho\right)=\left(\alpha \frac{Y}{K}-\delta_{K}-\rho\right)=-\frac{\dot{\lambda}_{K}}{\lambda_{K}}
+\]</span></p>
+<p>Therefore, from the optimal consumption path (<a href="horizontal-innovations.html#eq-euler" class="quarto-xref"><span>10.8</span></a>), it follows that</p>
+<p><span id="eq-growthrate"><span class="math display">\[
+g=\frac{1}{\theta}\left(\alpha \frac{Y}{K}-\delta_{K}-\rho\right)=\frac{1}{\theta}\left(B-\delta_{H}-\rho\right)
+\tag{9.4}\]</span></span></p>
+<p>Thus, given that <span class="math inline">\(g_{H}=g_{C}=g\)</span>, from (<a href="#eq-ushare" class="quarto-xref"><span>9.3</span></a>) it follows that</p>
+<p><span class="math display">\[
+\begin{aligned}
+u^{*} &amp; =1-\frac{\left(B-\delta_{H}-\rho\right)+\theta \delta_{H}}{\theta B} \\
+&amp; =\frac{(\theta-1)\left(B-\delta_{H}\right)+\rho}{\theta B}
+\end{aligned}
+\]</span></p>
+<p>In order to show that <span class="math inline">\(u^{*}&gt;0\)</span>, consider, for instance, the transversality condition for human capital</p>
+<p><span class="math display">\[
+\lim _{t \rightarrow \infty} e^{-\rho t} \lambda_{H}(t) H(t)=0
+\]</span></p>
+<p>Given that in steady-state <span class="math inline">\(\frac{\dot{\lambda}_{H}}{\lambda_{H}}=-\left(B-\delta_{H}-\rho\right)\)</span> and <span class="math inline">\(g_{H}=\frac{1}{\theta}\left(B-\delta_{H}-\rho\right) \Rightarrow\)</span> in order the transversality condition to hold</p>
+<p><span class="math display">\[
+\begin{aligned}
+-\left(B-\delta_{H}-\rho\right)-\rho+\frac{1}{\theta}\left(B-\delta_{H}-\rho\right) &amp; &lt;0 \Rightarrow \\
+\frac{1}{\theta}\left(B-\delta_{H}-\rho\right) &amp; &lt;\left(B-\delta_{H}\right) \Rightarrow \\
+(\theta-1)\left(B-\delta_{H}\right)+\rho &amp; &gt;0 \Rightarrow \\
+u^{*} &amp; &gt;0 .
+\end{aligned}
+\]</span></p>
+<p>Meanwhile, from (<a href="#eq-growthrate" class="quarto-xref"><span>9.4</span></a>) follows that in steady-state</p>
+<p><span class="math display">\[
+\left(\frac{Y}{K}\right)^{*}=\frac{B-\delta_{H}+\delta_{K}}{\alpha}
+\]</span></p>
+<p>From the law of motion of capital follows that in steady-state</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(\frac{C}{K}\right)^{*} &amp; =\left(\frac{Y}{K}\right)^{*}-\delta_{K}-\frac{1}{\theta}\left[\alpha\left(\frac{Y}{K}\right)^{*}-\delta_{K}-\rho\right] \\
+&amp; =\frac{1}{\theta}\left[(\theta-\alpha) \frac{B-\delta_{H}+\delta_{K}}{\alpha}-(\theta-1) \delta_{K}+\rho\right]
+\end{aligned}
+\]</span></p>
+<p>Therefore the savings rate is</p>
+<p><span class="math display">\[
+s^{*}=\left(\frac{Y-C}{Y}\right)^{*}=\frac{\left(\frac{Y}{K}\right)^{*}-\left(\frac{C}{K}\right)^{*}}{\left(\frac{Y}{K}\right)^{*}}=\frac{\alpha\left(B-\delta_{H}-\rho\right)+\alpha \theta \delta_{K}}{\theta\left(B-\delta_{H}+\delta_{K}\right)}
+\]</span></p>
+</section>
+<section id="comparative-statics" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="comparative-statics"><span class="header-section-number">9.4</span> Comparative statics</h2>
+<ul>
+<li>Increase in <span class="math inline">\(B\)</span> increases <span class="math inline">\(g\)</span>. Ambiguous effects on <span class="math inline">\(s^{*}\)</span> and <span class="math inline">\(u^{*}\)</span> (for <span class="math inline">\(\frac{1}{\theta} \geq 1, s^{*}\)</span> increases and <span class="math inline">\(u^{*}\)</span> decreases)</li>
+<li>Increase in <span class="math inline">\(\theta\)</span> (or <span class="math inline">\(\rho\)</span> ) decreases both <span class="math inline">\(g\)</span> and <span class="math inline">\(s^{*}\)</span>, while it increases <span class="math inline">\(u^{*}\)</span></li>
+<li>Increase in <span class="math inline">\(\alpha\)</span> increases <span class="math inline">\(s^{*}\)</span> but has no effect on <span class="math inline">\(g\)</span> and <span class="math inline">\(u^{*}\)</span></li>
+</ul>
+</section>
+<section id="kaldor-stylized-facts-and-first-models-of-endogenous-growth" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="kaldor-stylized-facts-and-first-models-of-endogenous-growth"><span class="header-section-number">9.5</span> Kaldor stylized facts and first models of endogenous growth</h2>
+<p>Assume that the aggregate human capital is uniformly distributed across the population: <span class="math inline">\(H=h L\)</span> and there is no population growth. This suggests that the production function may be thought as one with capital and labour. Human capital plays the role of labour-augmenting technological progress that is endogenously generated by savings from the final output production, i.e.&nbsp;<span class="math inline">\(Y=A K^{\alpha}(u h L)^{1-\alpha}\)</span>. In equilibrium:</p>
+<ul>
+<li><p><span class="math inline">\(g=\frac{\dot{H}}{H}=\frac{\dot{h}}{h}\)</span>.</p></li>
+<li><p><span class="math inline">\(Y / L=A u^{1-\alpha}\left(\frac{K}{h L}\right)^{\alpha} h\)</span> increases at a rate <span class="math inline">\(g\)</span> - <span class="math inline">\(K / L\)</span> also increases at a rate <span class="math inline">\(g\)</span> - <span class="math inline">\(Y / K\)</span> is constant</p></li>
+<li><p>The real interest rate <span class="math inline">\(r=B-\delta_{H}\)</span> is constant</p></li>
+<li><p>The wage rate <span class="math inline">\(w=\frac{\partial Y}{\partial(u L)}=(1-\alpha) \frac{Y}{H} h\)</span> increases at rate <span class="math inline">\(g\)</span></p></li>
+<li><p>Growth rates across countries differ in the long-run due to technology and preference parameters. Initial conditions (initial levels of human and physical capital stock) have a permanent effect on the level of welfare. When economies start with different endowments, the model predicts no convergence in levels of GDP per capita, even if countries have the same long-run growth rate. Parameter changes explain transition dynamics (not covered here) that can accommodate explanations for short episodes of strong growth.</p></li>
+</ul>
+</section>
+<section id="further-comments" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="further-comments"><span class="header-section-number">9.6</span> Further comments</h2>
+<p>Lucas motivated the importance of human capital accumulation for long-run economic growth, by forming two different (yet complementary) models. The first model allows for human capital accumulation out of the market (e.g., education sector) that would imply that there is a tradeoff between current consumption and future one, since human capital needs to be driven out of current production sector. Furthermore, in his original specification he allowed for both internal and external returns to human capital in the final-good production (spillovers à la Romer, <span class="math inline">\(Y=\)</span> <span class="math inline">\(\left.\left(A H^{\gamma}\right) K^{\alpha} H_{Y}^{1-\alpha} ; \gamma&gt;0\right)\)</span>.</p>
+<p>The second model allows on-the-job accumulation of human capital, i.e., another form of “learning-by-doing”. He assumed multiple goods, with different rates of human capital accumulation as byproduct of their production. The trade-off in this case is that human capital accumulation takes a form of a less desirable mix of current consumption goods. Growth promoting policies implied by either model are very different (education subsidies vs.&nbsp;industrial policy).</p>
+<p>The research challenge that Lucas acknowledges himself is that human capital is not a measurable factor, and in particular its potential external effects. He proposes that a good example of the importance of external effects of human capital is the formation of cities.</p>
+<p>Overall, the model lacks a good justification of the non-decreasing returns to the human capital accumulation. The accumulation of human capital differs importantly from the accumulation of knowledge and therefore this model is not a model of technological progress. The important difference between them is that human capital is rival and excludable while knowledge is not rival, though can be excludable.</p>
+<p>Empirically, human capital growth cannot explain cross-country growth differences. There is only some limited support that human capital matters as an input to R&amp;D. The latter comes out an important factor in driving aggregate productivity and explaining the cross-country variation in the growth and levels of GDP per capita.</p>
+<!-- ## Externalities in the production of goods and human capital -->
+<!-- There may be important positive externalities steaming from the availability of well educated personnel both in final goods production and in human capital accumulation (the employees in both "sectors" may get more productive if the rest are well educated). Due to such externalities the private returns from human capital will be biased downwards. Therefore, the competitive equilibrium would not deliver socially optimal allocations. -->
+<!-- One way to model such externalities, that would deliver tractable results and balanced growth path, is as follows. Let the final goods production be -->
+<!-- $$ -->
+<!-- Y=\left(A H_{Y}^{\gamma_{1}}\right) K^{\alpha} H_{Y}^{1-\alpha} -->
+<!-- $$ -->
+<!-- where $\gamma_{1}>0, A=$ const, and firms do not take into account the term in the brackets. Meanwhile, the accumulation of human capital is -->
+<!-- $$ -->
+<!-- \dot{H}=\left(B H_{H}^{\gamma_{2}}\right) H_{H}^{1-\gamma_{2}}-\delta_{H} H -->
+<!-- $$ -->
+<!-- where $\gamma_{2}>0$ and the household does not take into account the term in the brackets. This means that the amount of human capital in a sector has a positive effect on the productivity in the sector. An alternative specification would be that the amount of human capital in the economy $(H)$ has positive effect on the productivity in both production and education sectors. The difference The latter case could be motivated for example with economy wide better environment due to higher tution level(s). In contrast, the former setup would be more appropriate when peer effects play a role (e.g., there is learning from the peers). The preference is given to the former setup since the latter does not yield tractable analytic results for a wide range of parameter values. Basically this is because (41) is used to determine the share of human capital in human capital accumulation, $\frac{H_{H}}{H}$. In case externalities stem from the economy wide amount of human capital (41) implies non-linear and not so straight forward to solve expression for that share. -->
+<!-- In the model with (40), in decentralized equilibrium from the production side it will follow that -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- & u \equiv \frac{H_{Y}}{H} \\ -->
+<!-- & Y=A K^{\alpha}(u H)^{1+\gamma_{1}-\alpha} \\ -->
+<!-- & w=(1-\alpha) \frac{Y}{u H} \\ -->
+<!-- & r=\alpha \frac{Y}{K}-\delta_{K} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- It is straight forward to notice that there is a distortion: the wage rate of human capital is not equal to its marginal product, -->
+<!-- $$ -->
+<!-- w=(1-\alpha) \frac{Y}{u H} \neq M P_{H}=\left(1+\gamma_{1}-\alpha\right) \frac{Y}{u H} -->
+<!-- $$ -->
+<!-- In turn, with slight abuse of notation (i.e., $K$ instead of $W$ ), under (41) the representative household's problem is -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- & \max _{u, C} U=\int_{0}^{\infty} \frac{C^{1-\theta}-1}{1-\theta} e^{-\rho t} d t \\ -->
+<!-- & \text { s.t. } \\ -->
+<!-- & \dot{K}=\left(1+\tau_{K}\right) r K+\left(1+\tau_{H}^{1}\right) w u H-C-T \\ -->
+<!-- & \dot{H}=\tilde{B}[(1-u) H]^{1-\gamma_{2}}-\delta_{H} H \\ -->
+<!-- & \tilde{B}=B[(1-u) H]^{\gamma_{2}} \text { in equilibrium, } \\ -->
+<!-- & K(0), H(0)>0-\text { given, } -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- where $T$ is a lump-sum tax and $\tau_{K}, \tau_{H}^{1}$ are proportional taxes/subsidies. Let $q_{K}$ and $q_{H}$ be the shadow prices of the physical and human capital, respectively. The problem, if written in terms of current value Hamiltonian, is -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- \max _{u, C} H_{L C}= & \frac{C^{1-\theta}-1}{1-\theta}+q_{K}\left[\left(1+\tau_{K}\right) r K+\left(1+\tau_{H}^{1}\right) w u H-C-T\right] \\ -->
+<!-- & +q_{H}\left(1+\tau_{H}^{2}\right)\left\{\tilde{B}[(1-u) H]^{1-\gamma_{2}}-\delta_{H} H\right\} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- where $\tau_{H}^{2}$ is a proportional taxe/subsidy that allows the government to alter the accumulation of human capital. For each additional unit of human capital the government compensates the household with $\tau_{H}^{2}$ units of human capital. -->
+<!-- In equilibrium $T$ is such that the government runs balanced budget, i.e., -->
+<!-- $$ -->
+<!-- T=\tau_{K} r K+\tau_{H}^{1} w u H+\frac{q_{H}}{q_{K}} \tau_{H}^{2}\left[B(1-u) H-\delta_{H} H\right] -->
+<!-- $$ -->
+<!-- It is worth noticing that since $q_{H}$ and $q_{K}$ are the shadow prices of $H$ and $K$ (in terms of utility) $\frac{q_{H}}{q_{K}}$ is simply the price of $H$ relative to $K$. -->
+<!-- The optimal rules which follow from (46) are -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- {[C] } & : C^{-\theta}=q_{K} \\ -->
+<!-- {[u] } & : q_{K}\left(1+\tau_{H}^{1}\right) w=q_{H}\left(1+\tau_{H}^{2}\right)\left(1-\gamma_{2}\right) B, \\ -->
+<!-- {[K] } & : \dot{q}_{K}=\rho q_{K}-q_{K}\left(1+\tau_{K}\right) r \\ -->
+<!-- {[H] } & : \dot{q}_{H}=\rho q_{H}-\left\{q_{K}\left(1+\tau_{H}^{1}\right) w u+q_{H}\left(1+\tau_{H}^{2}\right)\left[B\left(1-\gamma_{2}\right)(1-u)-\delta_{H}\right]\right\}, \\ -->
+<!-- {\left[T V C_{K}\right] } & : \lim _{t \rightarrow \infty} q_{K} K e^{-\rho t}=0 \\ -->
+<!-- {\left[T V C_{H}\right] } & : \lim _{t \rightarrow \infty} q_{H} H e^{-\rho t}=0 . -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- Focusing on balanced growth path and fixing the share $u$ and the proportional taxes $\tau_{K}, \tau_{H}^{1}, \tau_{H}^{2}$, after some algebra it can be shown that the rate of growth of consumption is -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- \frac{\dot{C}}{C} & =\frac{1}{\theta}\left[\left(1+\tau_{K}\right) r-\rho\right] \\ -->
+<!-- & =\frac{1}{\theta}\left\{\left(1+\tau_{H}^{2}\right)\left[B\left(1-\gamma_{2}\right)-\delta_{H}\right]-\rho+g_{w}\right\} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- From (47) and (45) it follows that -->
+<!-- $$ -->
+<!-- g_{K}=g_{Y} -->
+<!-- $$ -->
+<!-- In turn, from (43) and (44) it follows that -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- g_{Y} & =\left(1+\gamma_{1}-\alpha\right) g_{H}+\alpha g_{K} \\ -->
+<!-- g_{w} & =g_{Y}-g_{H} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- From the human capital accumulation rule and law of motion of capital it follows that -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- g_{H} & =B(1-u)-\delta_{H} \\ -->
+<!-- g & \equiv g_{K}=g_{Y}=g_{C} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- Therefore, -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- g & =\frac{1+\gamma_{1}-\alpha}{1-\alpha} g_{H} \\ -->
+<!-- g_{w} & =\frac{\gamma_{1}}{1+\gamma_{1}-\alpha} g \\ -->
+<!-- g & =\frac{1}{\theta} \frac{\left(1+\tau_{H}^{2}\right)\left[B\left(1-\gamma_{2}\right)-\delta_{H}\right]-\rho}{1-\frac{1}{\theta} \frac{\gamma_{1}}{1+\gamma_{1}-\alpha}} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- A sufficient condition for having positive denominator is -->
+<!-- $$ -->
+<!-- \theta \geq 1 -->
+<!-- $$ -->
+<!-- Meanwhile, the nominator is non-negative if for example -->
+<!-- $$ -->
+<!-- \left(1-\gamma_{2}\right) B-\delta_{H}-\rho \geq 0 -->
+<!-- $$ -->
+<!-- which is slightly stronger than the condition for non-negative growth rate in the model without externalities $B-\delta_{H}-\rho \geq 0$. Hereafter these conditions are assumed to hold. -->
+<!-- The share $u$ can be found from (48), -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- 1-u & =\frac{g_{H}+\delta_{H}}{B} \\ -->
+<!-- & =\frac{1}{B}\left(\frac{1-\alpha}{1+\gamma_{1}-\alpha} g+\delta_{H}\right) -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- From (49) and (50) it is evident that $u$ increases with $\gamma_{2}$. This is because when $\gamma_{2}$ increases the private returns on human capital accumulation decline. From (49) and (50) it can be shown also that $u$ increases with $\gamma_{1}$. This, in turn, is because when $\gamma_{1}$ increases human capital becomes more productive in the production sector. -->
+<!-- The relative quantities of aggregates on balanced growth path, therefore, are -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- \frac{Y}{K} & =\frac{1}{\alpha}\left(\frac{\theta g+\rho}{1+\tau_{K}}+\delta_{K}\right) \\ -->
+<!-- \frac{C}{K} & =\frac{Y}{K}-g-\tau_{H}^{2} g_{H} \frac{q_{H}}{q_{K}} \frac{H}{K} \\ -->
+<!-- \frac{q_{H}}{q_{K} w} & =\frac{1}{(1-\alpha) u} \frac{K}{Y} \frac{q_{H}}{q_{K}} \frac{H}{K}=\frac{1+\tau_{H}^{1}}{\left(1+\tau_{H}^{2}\right)\left(1-\gamma_{2}\right) B} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- In social optimum it is easy to show that -->
+<!-- $$ -->
+<!-- g^{S P}=\frac{1}{\theta} \frac{B-\delta_{H}-\rho}{1-\frac{1}{\theta} \frac{\gamma_{1}}{1+\gamma_{1}-\alpha}} -->
+<!-- $$ -->
+<!-- This implies that in decentralized equilibrium the government needs to subsidize the accumulation of human capital and set -->
+<!-- $$ -->
+<!-- \tau_{H}^{2}=\frac{B-\delta_{H}}{B\left(1-\gamma_{2}\right)-\delta_{H}}-1>0 -->
+<!-- $$ -->
+<!-- in order to attain the first best outcome, $g=g^{S P}$. According to (48) this would immediately correct the share of human capital allocated to human capital accumulation, $u$. Therefore, it will correct the share of human capital in the production sector. Given that $\tau_{H}^{2}$ corrects the growth rate, it corrects also the return on physical capital in case $\tau_{K}=0$. Therefore, in such case it corrects the ratio $\frac{Y}{K}$. -->
+<!-- Meanwhile, $\tau_{H}^{1}$ can be used in order to correct the ratio $\frac{q_{H}}{q_{K} w}$ and set it equal to $\left(\frac{q_{H}}{q_{K} M P_{H}}\right)^{S P}$, -->
+<!-- $$ -->
+<!-- \tau_{H}^{1}=\frac{1+\gamma_{1}-\alpha}{1-\alpha}\left(1+\tau_{H}^{2}\right)\left(1-\gamma_{2}\right)-1 -->
+<!-- $$ -->
+<!-- It can be easily noticed, however, that such policy won't correct the ratio $\frac{C}{K}$. Therefore, there will be still dynamic inefficiency. -->
+<!-- In order to check these arguments set-up and solve the Social Planner's problem. -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- & \max _{u, C} U=\int_{0}^{\infty} \frac{C^{1-\theta}-1}{1-\theta} e^{-\rho t} d t, \\ -->
+<!-- & \text { s.t. } \\ -->
+<!-- & \dot{K}=A K^{\alpha}(u H)^{1+\gamma_{1}-\alpha}-C, \\ -->
+<!-- & \dot{H}=B(1-u) H-\delta_{H} H, \\ -->
+<!-- & K(0), H(0)>0-\text { given, } -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- In terms of current value Hamiltonian, -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- \max _{u, C} H_{L C}^{S P}= & \frac{C^{1-\theta}-1}{1-\theta}+q_{K}\left[A K^{\alpha}(u H)^{1+\gamma_{1}-\alpha}-C\right] \\ -->
+<!-- & +q_{H}\left[B(1-u) H-\delta_{H} H\right] -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- The optimal rules which follow are -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- & {[C]: C^{-\theta}=q_{K},} \\ -->
+<!-- & {[u]: q_{K}\left(1+\gamma_{1}-\alpha\right) \frac{Y}{u H}=q_{H} B,} \\ -->
+<!-- & {[K]: \dot{q}_{K}=\rho q_{K}-q_{K} \alpha \frac{Y}{K}} \\ -->
+<!-- & {[H]: \dot{q}_{H}=\rho q_{H}-\left\{q_{K}\left(1+\gamma_{1}-\alpha\right) \frac{Y}{u H} u+q_{H}\left[B(1-u)-\delta_{H}\right]\right\}} \\ -->
+<!-- & {\left[T V C_{K}\right]: \lim _{t \rightarrow \infty} q_{K} K e^{-\rho t}=0,} \\ -->
+<!-- & {\left[T V C_{H}\right]: \lim _{t \rightarrow \infty} q_{H} H e^{-\rho t}=0 .} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- After some algebra, on balanced growth path -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- \frac{\dot{C}}{C} & =\frac{1}{\theta}\left(\alpha \frac{Y}{K}-\rho\right) \\ -->
+<!-- & =\frac{1}{\theta}\left[B-\delta_{H}-\rho+\left(g_{Y}-g_{H}\right)\right] -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- From the first expression and the resource constraint it follows that -->
+<!-- $$ -->
+<!-- g^{S P} \equiv g_{Y}=g_{K}=g_{C} -->
+<!-- $$ -->
+<!-- Therefore, -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- g^{S P} & =\frac{1+\gamma_{1}-\alpha}{1-\alpha} g_{H} \\ -->
+<!-- g_{Y}-g_{H} & =\frac{\gamma_{1}}{1+\gamma_{1}-\alpha} g^{S P} -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- and -->
+<!-- $$ -->
+<!-- g^{S P}=\frac{1}{\theta} \frac{B-\delta_{H}-\rho}{1-\frac{1}{\theta} \frac{\gamma_{1}}{1+\gamma_{1}-\alpha}} . -->
+<!-- $$ -->
+<!-- From this expression, it follows that -->
+<!-- $$ -->
+<!-- 1-u^{S P}=\frac{g_{H}+\delta_{H}}{B} -->
+<!-- $$ -->
+<!-- This means that in decentralized equilibrium without policies both the growth rate and the allocation of human capital to human capital accumulation are lower than in social optimum. The suggested policy then corrects both. -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./AK.html" class="pagination-link" aria-label="The AK model - Spillovers à la Romer(1986)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The AK model - Spillovers à la Romer(1986)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./horizontal-innovations.html" class="pagination-link" aria-label="Horizontal Innovations and Model of Expanding Varieties (Romer, 1990)">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Horizontal Innovations and Model of Expanding Varieties (Romer, 1990)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

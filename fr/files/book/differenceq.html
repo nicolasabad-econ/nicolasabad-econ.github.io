@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Difference Equations – Notes in Economic Growth and Fluctuations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Intertemporal-Optimization.html" rel="next">
+<link href="./ODE.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ODE.html">Methods</a></li><li class="breadcrumb-item"><a href="./differenceq.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Difference Equations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Notes in Economic Growth and Fluctuations</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ODE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ordinary Differentials Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./differenceq.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Difference Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intertemporal-Optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Intertemporal Optimization</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Benchmark Models in Growth and Fluctuations Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Solow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Solow Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Ramsey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Ramsey-Cass-Koopmans Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./OLG.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Overlapping Generations Model</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Endogenous Growth Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./AK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The AK model - Spillovers à la Romer(1986)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./humanK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Human capital and Growth (Lucas, 1988)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./horizontal-innovations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Horizontal Innovations and Model of Expanding Varieties (Romer, 1990)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vertical-innovations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vertical innovations and Model of Quality Ladders (Grossman-Helpman ,1991; Aghion and Howitt 1992)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#lag-operators-and-difference-equations" id="toc-lag-operators-and-difference-equations" class="nav-link active" data-scroll-target="#lag-operators-and-difference-equations"><span class="header-section-number">3.1</span> Lag Operators and Difference Equations</a></li>
+  <li><a href="#first-order-linear-difference-equations" id="toc-first-order-linear-difference-equations" class="nav-link" data-scroll-target="#first-order-linear-difference-equations"><span class="header-section-number">3.2</span> First-Order Linear Difference Equations</a></li>
+  <li><a href="#second-order-linear-difference-equations" id="toc-second-order-linear-difference-equations" class="nav-link" data-scroll-target="#second-order-linear-difference-equations"><span class="header-section-number">3.3</span> Second-Order Linear Difference Equations</a></li>
+  <li><a href="#a-pair-of-first-order-linear-difference-equations" id="toc-a-pair-of-first-order-linear-difference-equations" class="nav-link" data-scroll-target="#a-pair-of-first-order-linear-difference-equations"><span class="header-section-number">3.4</span> A Pair of First-Order Linear Difference Equations</a></li>
+  <li><a href="#sec-norderdiffeq" id="toc-sec-norderdiffeq" class="nav-link" data-scroll-target="#sec-norderdiffeq"><span class="header-section-number">3.5</span> A System of n First-Order Linear Difference Equations</a></li>
+  <li><a href="#nonlinear-difference-equations" id="toc-nonlinear-difference-equations" class="nav-link" data-scroll-target="#nonlinear-difference-equations"><span class="header-section-number">3.6</span> Nonlinear difference equations</a></li>
+  <li><a href="#qualitative-analysis" id="toc-qualitative-analysis" class="nav-link" data-scroll-target="#qualitative-analysis"><span class="header-section-number">3.7</span> Qualitative Analysis</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ODE.html">Methods</a></li><li class="breadcrumb-item"><a href="./differenceq.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Difference Equations</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-diffeq" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Difference Equations</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this chapter, we review the properties and solution methods of first- and second-order difference equations, as well as of systems of first-order difference equations.</p>
+<p>Difference equations are the analog of differential equations when time is a discrete variable defined in terms of integers. They are an indispensable tool for the study of dynamic economic problems in discrete time. We shall thus assume that time is an integer <span class="math inline">\(t=\ldots,-2,-1,0,1,2, \ldots\)</span>, instead of <span class="math inline">\(t\)</span> being a real continuous variable.</p>
+<p>After defining lag operators, we then proceed to present solution methods for first- and second-order linear difference equations and for systems of interdependent linear difference equations.</p>
+<section id="lag-operators-and-difference-equations" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="lag-operators-and-difference-equations"><span class="header-section-number">3.1</span> Lag Operators and Difference Equations</h2>
+<p>To define and analyze difference equations, it is useful to first define lag operators. The value of a variable <span class="math inline">\(x\)</span> in period <span class="math inline">\(t\)</span> is denoted by <span class="math inline">\(x_{t}\)</span>. The lag operator <span class="math inline">\(L\)</span> for a variable <span class="math inline">\(x_{t}\)</span> is defined by</p>
+<p><span class="math display">\[L^{n} x_{t}=x_{t-n}\]</span></p>
+<p>for <span class="math inline">\(n=\ldots,-2,-1,0,1,2, \ldots\)</span></p>
+<p>Thus, the multiplication of <span class="math inline">\(x_{t}\)</span> by <span class="math inline">\(L\)</span> denotes the value of the variable in the previous period, and the multiplication of the variable by <span class="math inline">\(L^{n}\)</span> denotes the value of the variable in period <span class="math inline">\(t-n\)</span>. Note than if <span class="math inline">\(n\)</span> is negative (i.e., <span class="math inline">\(n&lt;0\)</span> ), the lag operator shifts the variable <span class="math inline">\(n\)</span> periods into the future.</p>
+<p>This definition is mathematically somewhat loose. More formally, let us assume a sequence</p>
+<p><span class="math display">\[
+\left\{x_{t}\right\}_{t=-\infty}^{\infty}
+\]</span></p>
+<p>that links a real number <span class="math inline">\(x\)</span> with every integer <span class="math inline">\(t\)</span>. Applying the operator <span class="math inline">\(L^{n}\)</span> to this sequence, we get a new sequence:</p>
+<p><span class="math display">\[
+\left\{y_{t}\right\}_{t=-\infty}^{\infty}=\left\{x_{t-n}\right\}_{t=-\infty}^{\infty}
+\]</span></p>
+<p>The operator <span class="math inline">\(L^{n}\)</span> projects one sequence onto another.</p>
+<p>Let us now examine a polynomial in the lag operator:</p>
+<p><span class="math display">\[A(L)=a_{0}+a_{1} L+a_{2} L^{2}+\cdots=\sum_{j=0}^{\infty} a_{j} L^{j}\]</span></p>
+<p>Applying the polynomial <span class="math inline">\(A(L)\)</span> to variable <span class="math inline">\(x_{t}\)</span>, we get a moving sum of <span class="math inline">\(x \mathrm{~s}\)</span> in different time periods:</p>
+<p><span class="math display">\[A(L) x_{t}=\sum_{j=0}^{\infty} a_{j} L^{j} x_{t}=\sum_{j=0}^{\infty} a_{j} x_{t-j}\]</span></p>
+<p>Let us confine ourselves to rational functions (i.e., polynomials) that can be expressed as the ratio of two finite polynomials in <span class="math inline">\(L\)</span>. Assume that</p>
+<p><span id="eq-polyratio"><span class="math display">\[A(L)=\frac{B(L)}{C(L)} \tag{3.1}\]</span></span></p>
+<p>where</p>
+<p><span id="eq-polyratio2"><span class="math display">\[\begin{aligned}
+B(L)=\sum_{j=0}^{m} b_{j} L^{j}\\
+C(L)=\sum_{j=0}^{n} c_{j} L^{j}
+\end{aligned}
+\tag{3.2}\]</span></span></p>
+<p>and <span class="math inline">\(b_{j}\)</span> and <span class="math inline">\(c_{j}\)</span> are constants. The combination of (<a href="#eq-polyratio" class="quarto-xref"><span>3.1</span></a>) and (<a href="#eq-polyratio2" class="quarto-xref"><span>3.2</span></a>) imposes a more economical and restrictive form on <span class="math inline">\(a_{j}\)</span>, without serious loss of generality.</p>
+<p>A special case of (<a href="#eq-polyratio" class="quarto-xref"><span>3.1</span></a>) and (<a href="#eq-polyratio2" class="quarto-xref"><span>3.2</span></a>) is the so-called geometric polynomial, which takes the form</p>
+<p><span id="eq-geoo"><span class="math display">\[A(L)=\frac{1}{1-\lambda L} \tag{3.3}\]</span></span></p>
+<p>From the properties of geometric progressions, the geometric polynomial can be expanded in two ways:</p>
+<p><span id="eq-geo"><span class="math display">\[A(L)=\frac{1}{1-\lambda L}=1+\lambda L+\lambda^{2} L^{2}+\cdots \tag{3.4}\]</span></span></p>
+<p><span id="eq-geo2"><span class="math display">\[A(L)=\frac{1}{1-\lambda L}=-\frac{1}{\lambda L}\left(1+\frac{1}{\lambda} L^{-1}+\frac{1}{\lambda^{2}} L^{-2}+\cdots\right) \tag{3.5}\]</span></span></p>
+<p>The expansion (<a href="#eq-geo" class="quarto-xref"><span>3.4</span></a>) is used when <span class="math inline">\(|\lambda|&lt;1\)</span>, and the expansion (<a href="#eq-geo2" class="quarto-xref"><span>3.5</span></a>) when <span class="math inline">\(|\lambda|&gt;\)</span> 1 .</p>
+<p>If we multiply the geometric polynomial (<a href="#eq-geoo" class="quarto-xref"><span>3.3</span></a>) by some variable <span class="math inline">\(x_{t}\)</span>, we get</p>
+<p><span id="eq-geo3"><span class="math display">\[A(L) x_{t}=\frac{1}{1-\lambda L} x_{t} \tag{3.6}\]</span></span></p>
+<p>With the expansion (<a href="#eq-geo" class="quarto-xref"><span>3.4</span></a>) for <span class="math inline">\(A(L)\)</span> we get</p>
+<p><span id="eq-geo4"><span class="math display">\[A(L) x_{t}=\frac{1}{1-\lambda L} x_{t}=\sum_{i=0}^{\infty} \lambda^{i} L^{i} x_{t}=\sum_{i=0}^{\infty} \lambda^{i} x_{t-i} \tag{3.7}\]</span></span></p>
+<p>If <span class="math inline">\(|\lambda|&lt;1\)</span>, and <span class="math inline">\(\left\{x_{t}\right\}_{l=-\infty}^{\infty}\)</span> is a finite sequence of real numbers, then (<a href="#eq-geo4" class="quarto-xref"><span>3.7</span></a>) defines a finite sequence of real numbers as well.</p>
+<p>In contrast, we have the alternative expansion of (<a href="#eq-geo3" class="quarto-xref"><span>3.6</span></a>). Using (<a href="#eq-geo2" class="quarto-xref"><span>3.5</span></a>), we get</p>
+<p><span id="eq-geo5"><span class="math display">\[A(L) x_{t}=\frac{1}{1-\lambda L} x_{t}=(\lambda L)^{-1} \sum_{i=0}^{\infty} \lambda^{-i} L^{-i} x_{t}=\sum_{i=0}^{\infty} \lambda^{-i} x_{t+i} \tag{3.8}\]</span></span></p>
+<p>If <span class="math inline">\(|\lambda|&gt;1\)</span>, and <span class="math inline">\(\left\{x_{t}\right\}_{t=-\infty}^{\infty}\)</span> is a finite sequence of real numbers, then (<a href="#eq-geo5" class="quarto-xref"><span>3.8</span></a>) defines a finite sequence of real numbers as well, because we have <span class="math inline">\(\left|\lambda^{-1}\right|&lt;1\)</span>.</p>
+<p>In economics, because we usually seek convergence to some equilibrium, we seek the analysis of finite sequences. Thus, we select the backward expansion when <span class="math inline">\(|\lambda|&lt;1\)</span>, and the forward expansion when <span class="math inline">\(|\lambda|&gt;1\)</span>.</p>
+<p>A difference equation (or recurrence relation) equates a polynomial in the various iterates of a variable-that is, in the values of the elements of a sequence-to zero.</p>
+<p>An <span class="math inline">\(n\)</span> th-order linear difference equation with constant coefficients takes the form</p>
+<p><span class="math display">\[
+a_{0} x_{t}+a_{1} x_{t-1}+a_{2} x_{t-2}+\cdots+a_{n} x_{t-n}-b=\sum_{j=0}^{n} a_{j} L^{j} x_{t}-b=0
+\]</span></p>
+<p>where <span class="math inline">\(a_{j}, j=0,1,2, \ldots, n\)</span> and <span class="math inline">\(b\)</span> are constant coefficients.</p>
+<p>By equating the right-hand side of the geometric polynomial (<a href="#eq-geo4" class="quarto-xref"><span>3.7</span></a>) to zero, we get</p>
+<p><span class="math display">\[\sum_{i=0}^{\infty} \lambda^{i} x_{t-i}=x_{t}+\lambda x_{t-1}+\lambda^{2} x_{t-2}+\cdots=0\]</span></p>
+<p>This is an example of an infinite-order linear difference equation.</p>
+</section>
+<section id="first-order-linear-difference-equations" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="first-order-linear-difference-equations"><span class="header-section-number">3.2</span> First-Order Linear Difference Equations</h2>
+<p>Let us first consider the first-order linear difference equation with constant coefficients:</p>
+<p><span id="eq-simpleOLD"><span class="math display">\[x_{t}=a+b x_{t-1} \tag{3.9}\]</span></span></p>
+<p>Using lag operators, (<a href="#eq-simpleOLD" class="quarto-xref"><span>3.9</span></a>) can be written as</p>
+<p><span id="eq-simpleOLD2"><span class="math display">\[(1-b L) x_{t}=a \tag{3.10}\]</span></span></p>
+<p>Dividing both sides of (<a href="#eq-simpleOLD2" class="quarto-xref"><span>3.10</span></a>) by <span class="math inline">\((1-b L)\)</span> and adding <span class="math inline">\(c b^{t}\)</span>, we get</p>
+<p><span id="eq-simpleOLD3"><span class="math display">\[x_{t}=\frac{a}{1-b L}+c b^{t}=\frac{a}{1-b}+c b^{t} \tag{3.11}\]</span></span></p>
+<p>where <span class="math inline">\(c\)</span> is an arbitrary constant. We include the term <span class="math inline">\(c b^{t}\)</span> because for any <span class="math inline">\(c\)</span>,</p>
+<p><span class="math display">\[(1-b L) c b^{t}=c b^{t}-b c b^{t-1}=0\]</span></p>
+<p>Hence, if we multiply (<a href="#eq-simpleOLD3" class="quarto-xref"><span>3.11</span></a>) by <span class="math inline">\((1-b L)\)</span>, we get back (<a href="#eq-simpleOLD2" class="quarto-xref"><span>3.10</span></a>). Equation (<a href="#eq-simpleOLD3" class="quarto-xref"><span>3.11</span></a>) determines the general solution of the linear first-order difference equation (<a href="#eq-simpleOLD" class="quarto-xref"><span>3.9</span></a>).</p>
+<p>To find a particular solution, we must determine <span class="math inline">\(c\)</span>. Assume that in period <span class="math inline">\(t\)</span> <span class="math inline">\(=0, x\)</span> had the value <span class="math inline">\(x_{0}\)</span>. From (<a href="#eq-simpleOLD3" class="quarto-xref"><span>3.11</span></a>), it follows that</p>
+<p><span class="math display">\[c=x_{0}-\frac{a}{1-b}\]</span></p>
+<p>Thus, the particular solution of (<a href="#eq-simpleOLD" class="quarto-xref"><span>3.9</span></a>) is given by</p>
+<p><span id="eq-simpleOLD4"><span class="math display">\[x=\frac{a}{1-b}+\left(x_{0}-\frac{a}{1-b}\right) b^{t} \tag{3.12}\]</span></span></p>
+<p>If the boundary condition is such that <span class="math inline">\(x_{0}=a /(1-b)\)</span>, then (<a href="#eq-simpleOLD4" class="quarto-xref"><span>3.12</span></a>) implies that</p>
+<p><span class="math display">\[x_{t}=x_{0}, \forall t \geq 0\]</span></p>
+<p>Thus, <span class="math inline">\(a /(1-b)\)</span> can be seen as an equilibrium value. If <span class="math inline">\(x=a /(1-b)\)</span>, then <span class="math inline">\(x\)</span> tends to stay at this level.</p>
+<p>In addition, <span class="math inline">\(x_{0}\)</span> if <span class="math inline">\(|b|&lt;1\)</span>, (<a href="#eq-simpleOLD4" class="quarto-xref"><span>3.12</span></a>) implies that for any <span class="math inline">\(x_{0}\)</span>, we have</p>
+<p><span id="eq-simpleOLD5"><span class="math display">\[\lim _{t \rightarrow \infty} x_{t}=\frac{a}{1-b} \tag{3.13}\]</span></span></p>
+<p>Equation (<a href="#eq-simpleOLD5" class="quarto-xref"><span>3.13</span></a>) implies that the difference equation is stable, because <span class="math inline">\(x\)</span> tends to approach its equilibrium value over time from any initial condition. In this case, the equilibrium value is a stable node.</p>
+<p>If <span class="math inline">\(|b|&gt;1\)</span>, the only path that leads to the equilibrium value is the immediate jump of <span class="math inline">\(x\)</span> to the equilibrium value <span class="math inline">\(a /(1-b)\)</span>. This solution requires</p>
+<p><span class="math inline">\(c=0, x_{t}=a /(1-b), \forall t\)</span>.</p>
+<p>The equilibrium value in this case is a saddle point.</p>
+</section>
+<section id="second-order-linear-difference-equations" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="second-order-linear-difference-equations"><span class="header-section-number">3.3</span> Second-Order Linear Difference Equations</h2>
+<p>We next turn to the second-order linear difference equation with constant coefficients, of the form</p>
+<p><span id="eq-2OLD"><span class="math display">\[x_{t}=a+b x_{t-1}+c x_{t-2} \tag{3.14}\]</span></span></p>
+<p>Using the lag operator, (<a href="#eq-2OLD" class="quarto-xref"><span>3.14</span></a>) can be written as</p>
+<p><span id="eq-2OLD2"><span class="math display">\[
+\left(1-b L-c L^{2}\right) x_{t}=a
+\tag{3.15}\]</span></span></p>
+<p>Equation (<a href="#eq-2OLD2" class="quarto-xref"><span>3.15</span></a>) can be expressed as</p>
+<p><span id="eq-2OLD3"><span class="math display">\[\left(1-\lambda_{1} L\right)\left(1-\lambda_{2} L\right) x_{t}=a \tag{3.16}\]</span></span></p>
+<p>where</p>
+<p><span class="math display">\[\lambda_{1}+\lambda_{2}=b\]</span></p>
+<p><span class="math display">\[\lambda_{1} \lambda_{2}=-c\]</span></p>
+<p>and <span class="math inline">\(\lambda_{1}\)</span> and <span class="math inline">\(\lambda_{2}\)</span> are the two roots of the second-order linear difference equation (<a href="#eq-2OLD" class="quarto-xref"><span>3.14</span></a>).</p>
+<p>There are three possible cases, depending on the discriminant of the characteristic equa-tion of (<a href="#eq-2OLD" class="quarto-xref"><span>3.14</span></a>).</p>
+<ul>
+<li>Case 1: <span class="math inline">\(b^{2}&gt;-4 c\)</span> The discriminant is positive, and the roots are real and distinct, taking the form</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \lambda_{1}=\frac{b+\sqrt{b^{2}+4 c}}{2} \\
+&amp; \lambda_{2}=\frac{b-\sqrt{b^{2}+4 c}}{2}
+\end{aligned}
+\]</span></p>
+<p>From (<a href="#eq-2OLD3" class="quarto-xref"><span>3.16</span></a>), the general solution of (<a href="#eq-2OLD" class="quarto-xref"><span>3.14</span></a>) takes the form</p>
+<p><span class="math display">\[
+x_{t}=\frac{a}{\left(1-\lambda_{1}\right)\left(1-\lambda_{2}\right)}+d_{1} \lambda_{1}^{t}+d_{2} \lambda_{2}^{t}=\frac{a}{(1-b-c)}+d_{1} \lambda_{1}^{t}+d_{2} \lambda_{2}^{t}
+\]</span></p>
+<p>where <span class="math inline">\(d_{1}\)</span> and <span class="math inline">\(d_{2}\)</span> are two arbitrary constants. To determine the arbitrary constants, one needs two boundary conditions, depending on the values of the two roots.</p>
+<p>As in the case of a first-order difference equation, <span class="math inline">\(a /(1-b-c)\)</span> can be seen as the equili-brium value of <span class="math inline">\(x\)</span>.</p>
+<p>We have convergence to the equilibrium value if <span class="math inline">\(\left|\lambda_{1}\right|&lt;1\)</span> and <span class="math inline">\(\left|\lambda_{2}\right|&lt;1\)</span>. In this case, the equilibrium value will be a stable node, and to determine the two arbitrary constants, <span class="math inline">\(d_{1}\)</span> and <span class="math inline">\(d_{2}\)</span>, we need two initial conditions <span class="math inline">\(x_{1}, x_{2} \neq 0\)</span>.</p>
+<p>If the two roots lie on either side of unity (i.e., if <span class="math inline">\(\left|\lambda_{1}\right|&lt;1\)</span> and <span class="math inline">\(\left|\lambda_{2}\right|&gt;1\)</span> ), then the equilibrium value will be a saddle point. In this case, to determine the two arbitrary constants <span class="math inline">\(d_{1}\)</span> and <span class="math inline">\(d_{2}\)</span>, we need one initial and one final condition. The final condition can be none other than the equilibrium value. As a result, we shall have convergence to the equilibrium value only if <span class="math inline">\(d_{1} \neq 0\)</span> and <span class="math inline">\(d_{2}=0\)</span>.</p>
+<p>If both roots are greater than unity (i.e., if <span class="math inline">\(\left|\lambda_{1}\right|&gt;1\)</span> and <span class="math inline">\(\left|\lambda_{2}\right|&gt;1\)</span> ), then the only solution is the immediate jump of <span class="math inline">\(x\)</span> to the equilibrium value <span class="math inline">\(a /(1-b-\)</span> <span class="math inline">\(c)\)</span>. This solution requires <span class="math inline">\(d_{1}=0, d_{2}=0\)</span>, and <span class="math inline">\(x_{t}=a /(1-b-c)\)</span> for all <span class="math inline">\(t\)</span>.</p>
+<ul>
+<li>Case 2: <span class="math inline">\(b^{2}=-4 c\)</span> The discriminant is equal to zero, and we have two equal real roots of the form</li>
+</ul>
+<p><span class="math display">\[
+\lambda_{1}=\lambda_{2}=\lambda=\frac{b}{2} .
+\]</span></p>
+<p>The general solution takes the form</p>
+<p><span class="math display">\[x_{t}=\frac{a}{(1-b-c)}+d_{1} \lambda^{t}+d_{2} t \lambda^{t}\]</span></p>
+<p>If <span class="math inline">\(|\lambda|&lt;1\)</span>, to determine the two arbitrary constants <span class="math inline">\(d_{1}\)</span> and <span class="math inline">\(d_{2}\)</span>, we need two initial conditions.</p>
+<p>If <span class="math inline">\(\lambda\)</span> is greater than unity in absolute value (i.e., if <span class="math inline">\(|\lambda|&gt;1\)</span> ), then the only solution is the immediate jump of <span class="math inline">\(x\)</span> to the equilibrium value <span class="math inline">\(a /(1-b-c)\)</span>. This solution requires <span class="math inline">\(d_{1}=0, d_{2}=0\)</span>, and <span class="math inline">\(x_{t}=a /(1-b-c)\)</span> for all <span class="math inline">\(t\)</span>.</p>
+<ul>
+<li>Case 3 <span class="math inline">\(b^{2}&lt;-4 c\)</span> The discriminant is negative, and we have two complex roots, which take the form of a pair of complex conjugates: <span class="math display">\[
+\lambda_{1}=\mu+\nu i
+\]</span></li>
+</ul>
+<p><span class="math display">\[
+\lambda_{2}=\mu-v i
+\]</span></p>
+<p>where <span class="math inline">\(\mu=\frac{b}{2}\)</span>, and <span class="math inline">\(v=\frac{\sqrt{-4 c-b^{2}}}{2}\)</span>.</p>
+<p>Using De Moivre’s theorem and the Pythagorean theorem the solution takes the form</p>
+<p><span class="math display">\[
+x_{t}=\frac{a}{1-b-c}+R^{t}\left(\left(d_{1}+d_{2}\right) \cos (\theta t)+\left(d_{1}-d_{2}\right) \sin (\theta t)\right)
+\]</span></p>
+<p>where <span class="math inline">\(R\)</span> and <span class="math inline">\(\theta\)</span> are defined by</p>
+<p><span class="math display">\[
+R=\sqrt{\mu^{2}+v^{2}}=\sqrt{\frac{b^{2}-4 c-b^{2}}{4}}=\sqrt{-c}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\cos (\theta)=\frac{\mu}{\sqrt{-c}}=\frac{b}{2 \sqrt{-c}}, \quad \sin (\theta)=\frac{v}{\sqrt{-c}}=\frac{\sqrt{-4 c-b^{2}}}{2 \sqrt{-c}}\]</span></p>
+<p>This solution will produce oscillations of a periodic nature. The oscillations will be dampened if and only if <span class="math inline">\(|c|&lt;1\)</span>. In such a case, there will be cyclical convergence to the equilibrium value. In the case <span class="math inline">\(|c|&lt;1\)</span>, there will be continuous oscillations of a constant periodicity. And if <span class="math inline">\(|c|&gt;1\)</span>, there will be divergent oscillations, unless <span class="math inline">\(x\)</span> jumps immediately to its equilibrium value.</p>
+</section>
+<section id="a-pair-of-first-order-linear-difference-equations" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="a-pair-of-first-order-linear-difference-equations"><span class="header-section-number">3.4</span> A Pair of First-Order Linear Difference Equations</h2>
+<p>We next turn to a second-order system of two linear first-order difference equations. The system is described by</p>
+<p><span id="eq-sysOLD"><span class="math display">\[
+\begin{aligned}
+&amp; x_{t}=a_{10}+a_{11} x_{t-1}+a_{12} y_{t-1} \\
+&amp; y_{t}=a_{20}+a_{21} x_{t-1}+a_{22} y_{t-1}
+\end{aligned}
+\tag{3.17}\]</span></span></p>
+<p>As in the case of a system of two first-order differential equations, the first method of solving this system is the substitution method. We can use the second equation to substitute for <span class="math inline">\(y_{t-1}\)</span> in the first equation, and thus obtain a second-order difference equation in <span class="math inline">\(x\)</span> :</p>
+<p><span id="eq-sysOLD2"><span class="math display">\[
+x_{t}=a+b x_{t-1}+c x_{t-2}
+\tag{3.18}\]</span></span></p>
+<p>where <span class="math inline">\(a=\left(a_{10}\left(1-a_{22}\right)+a_{12} a_{20}\right), b=a_{11}+a_{22}\)</span>, and <span class="math inline">\(c=-\left(a_{11} a_{22}-a_{12} a_{21}\right)\)</span>.</p>
+<p>Equation (<a href="#eq-sysOLD2" class="quarto-xref"><span>3.18</span></a>) has the same form as (<a href="#eq-2OLD" class="quarto-xref"><span>3.14</span></a>) and can be solved as an ordinary second-order linear difference equation with constant coefficients. Making use of the lag operator, the homogeneous equation corresponding to (<a href="#eq-sysOLD2" class="quarto-xref"><span>3.18</span></a>) can be written as</p>
+<p><span class="math display">\[
+\left(L^{2}-\frac{a_{11}+a_{22}}{a_{11} a_{22}-a_{12} a_{21}} L+\frac{1}{a_{11} a_{22}-a_{12} a_{21}}\right) x_{t}=0 .
+\]</span></p>
+<p>The two roots of the polynomial in the lag operator must satisfy the characteristic equation</p>
+<p><span id="eq-charapoly"><span class="math display">\[\lambda^{2}-\frac{a_{11}+a_{22}}{a_{11} a_{22}-a_{12} a_{21}} \lambda+\frac{1}{a_{11} a_{22}-a_{12} a_{21}}=0 \tag{3.19}\]</span></span></p>
+<p>By going through the alternative substitutions, a similar second-order difference equation can be obtained for the second variable <span class="math inline">\(y_{t}\)</span>.</p>
+<p>Alternatively, one can rewrite the system (<a href="#eq-sysOLD" class="quarto-xref"><span>3.17</span></a>) in matrix form as</p>
+<p><span id="eq-sysOLD3"><span class="math display">\[
+\binom{x_{t}}{y_{t}}=\left(\begin{array}{ll}a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}\end{array}\right)\binom{x_{t-1}}{y_{t-1}}+\binom{a_{10}}{a_{20}}
+\tag{3.20}\]</span></span></p>
+<p>The homogeneous system corresponding to (<a href="#eq-sysOLD3" class="quarto-xref"><span>3.20</span></a>), with <span class="math inline">\(a_{10}=a_{20}=0\)</span>, takes the form</p>
+<p><span id="eq-sysOLD4"><span class="math display">\[
+\binom{x_{t}}{y_{t}}=\left(\begin{array}{ll}a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}\end{array}\right)\binom{x_{t-1}}{y_{t-1}}
+\tag{3.21}\]</span></span></p>
+<p>Using the lag operator <span class="math inline">\(L\)</span>, (<a href="#eq-sysOLD3" class="quarto-xref"><span>3.20</span></a>) can be rewritten as</p>
+<p><span class="math display">\[
+\binom{x_{t}}{y_{t}}\left(\begin{array}{cc}1-a_{11} L &amp; -a_{12} L \\ -a_{21} L &amp; 1-a_{22} L\end{array}\right)=\binom{0}{0}
+\]</span></p>
+<p>For (<a href="#eq-sysOLD3" class="quarto-xref"><span>3.20</span></a>) to have a solution, the matrix in the lag operator must be singular. Therefore, its determinant must be equal to zero. Thus, for a solution to exist, we must have</p>
+<p><span class="math display">\[\operatorname{det}\left(\begin{array}{cc}1-a_{11} L &amp; -a_{12} L \\ -a_{21} L &amp; 1-a_{22} L\end{array}\right)=0\]</span></p>
+<p>This condition implies a polynomial in the lag operator with characteristic equation</p>
+<p><span class="math display">\[
+\lambda^{2}-\frac{a_{11}+a_{22}}{a_{11} a_{22}-a_{12} a_{21}} \lambda+\frac{1}{a_{11} a_{22}-a_{12} a_{21}}=0
+\]</span></p>
+<p>which is identical to (<a href="#eq-charapoly" class="quarto-xref"><span>3.19</span></a>), the characteristic equation of the second-order difference equation (<a href="#eq-sysOLD2" class="quarto-xref"><span>3.18</span></a>), and will of course give the same solution for the two roots.</p>
+<p>However, even this solution method becomes unwieldy for higher-order systems when there are more than two variables. It is thus desirable to investigate other solution methods. To do so, it is worth generalizing the system to one of <span class="math inline">\(n\)</span> first-order linear difference equations.</p>
+</section>
+<section id="sec-norderdiffeq" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="sec-norderdiffeq"><span class="header-section-number">3.5</span> A System of n First-Order Linear Difference Equations</h2>
+<p>Let us consider the following system of <span class="math inline">\(n\)</span> first-order difference equations. Such systems arise quite often in dynamic macroeconomics:</p>
+<p><span id="eq-nsysOLD"><span class="math display">\[
+\begin{aligned}
+&amp; x_{1, t}=a_{10}+a_{11} x_{1, t-1}+a_{12} x_{2, t-1}+\cdots+a_{1 n} x_{n, t-1} \\
+&amp; x_{2, t}=a_{20}+a_{21} x_{1, t-1}+a_{22} x_{2, t-1}+\cdots+a_{2 n} x_{n, t-1} \\
+&amp; \vdots \\
+&amp; x_{n, t}=a_{n 0}+a_{n 1} x_{1, t-1}+a_{n 2} x_{2, t-1}+\cdots+a_{n n} x_{n, t-1}
+\end{aligned}
+\tag{3.22}\]</span></span></p>
+<p>In matrix form, the system (<a href="#eq-nsysOLD" class="quarto-xref"><span>3.22</span></a>) can be written as</p>
+<p><span id="eq-nsysOLD2"><span class="math display">\[
+\left(\begin{array}{c}
+x_{1, t} \\
+\vdots \\
+x_{n, t}
+\end{array}\right)=\left(\begin{array}{ccc}
+a_{11} &amp; \cdots &amp; a_{1 n} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{n 1} &amp; \cdots &amp; a_{n n}
+\end{array}\right)\left(\begin{array}{c}
+x_{1, t-1} \\
+\vdots \\
+x_{n, t-2}
+\end{array}\right)+\left(\begin{array}{c}
+a_{10} \\
+\vdots \\
+x_{n 0}
+\end{array}\right)
+\tag{3.23}\]</span></span></p>
+<p>By defining the vector of <span class="math inline">\(x\)</span> as <span class="math inline">\(\mathbf{x}\)</span>, the matrix of multiplicative parameters as <span class="math inline">\(\mathbf{A}\)</span>, and the vector of the constants as <span class="math inline">\(\mathbf{a}_{0}\)</span>, the system can be written as</p>
+<p><span id="eq-nsysOLD3"><span class="math display">\[
+\mathbf{x}_{t}=\mathbf{A x}_{t-1}+\mathbf{a}_{0}
+\tag{3.24}\]</span></span></p>
+<p>If <span class="math inline">\(a_{i j}=0\)</span> for <span class="math inline">\(i \neq j\)</span> in the system (<a href="#eq-nsysOLD2" class="quarto-xref"><span>3.23</span></a>), then the <span class="math inline">\(n\)</span> equations are uncoupled, and the system can be solved as <span class="math inline">\(n\)</span> independent first-order linear difference equations with solutions</p>
+<p><span class="math display">\[
+x_{i, t}=\frac{a_{i 0}}{1-a_{i i}}+\left(x_{i, 0}-\frac{a_{i 0}}{1-a_{i i}}\right)\left(a_{i i}\right)^{t}
+\]</span></p>
+<p>where <span class="math inline">\(x_{i, 0}\)</span> is a boundary value for <span class="math inline">\(x_{i}\)</span>.</p>
+<p>Thus, if we could transform the system (<a href="#eq-nsysOLD2" class="quarto-xref"><span>3.23</span></a>) into one with a coefficient matrix that is diagonal, we could easily calculate the solution. The question is how to transform the system into one with a diagonal coefficient matrix.</p>
+<p>We know from the properties of matrices that the coefficient matrix <span class="math inline">\(\mathbf{A}\)</span> can be transformed as</p>
+<p><span id="eq-nsysOLD4"><span class="math display">\[
+\mathbf{A}=\mathbf{P J P}^{-1}
+\tag{3.25}\]</span></span></p>
+<p>where <span class="math inline">\(\mathbf{J}\)</span> is a diagonal matrix with the eigenvalues of <span class="math inline">\(\mathbf{A}\)</span> on its diagonal, and <span class="math inline">\(\mathbf{P}\)</span> is a matrix consisting of the corresponding (right) eigenvectors. Equation (<a href="#eq-nsysOLD4" class="quarto-xref"><span>3.25</span></a>) implies that</p>
+<p><span class="math display">\[\mathbf{A P}=\mathbf{P J}\]</span></p>
+<p>We can use these properties to rewrite the system (<a href="#eq-nsysOLD3" class="quarto-xref"><span>3.24</span></a>) as</p>
+<p><span id="eq-nsysOLD5"><span class="math display">\[
+\mathbf{x}_{t}=\mathbf{A x}_{t-1}+\mathbf{a}_{0}=\mathbf{P J P}^{-1} \mathbf{x}_{t-1}+\mathbf{a}_{0}
+\tag{3.26}\]</span></span></p>
+<p>Multiplying both sides of (<a href="#eq-nsysOLD5" class="quarto-xref"><span>3.26</span></a>) by <span class="math inline">\(\mathbf{P}^{-1}\)</span>, we get</p>
+<p><span class="math display">\[
+\mathbf{P}^{-1} \mathbf{x}_{t}=\mathbf{J P}^{-1} \mathbf{x}_{t-1}+\mathbf{P}^{-1} \mathbf{a}_{0}
+\]</span></p>
+<p>Defining a new vector of variables <span class="math inline">\(\mathbf{X}_{t}=\mathbf{P}^{-1} \mathbf{x}_{t}\)</span>, and a new vector of constants <span class="math inline">\(\mathbf{A}_{0}=\mathbf{P}^{-1} \mathbf{a}_{0}\)</span>, we can rewrite (<a href="#eq-nsysOLD3" class="quarto-xref"><span>3.24</span></a>) as</p>
+<p><span class="math display">\[\mathbf{X}_{t}=\mathbf{J} \mathbf{X}_{t-1}+\mathbf{A}_{0}\]</span></p>
+<p>Thus, by using the matrix consisting of the eigenvectors of the original coefficient matrix <span class="math inline">\(\mathbf{A}\)</span> to define new variables and new constants, we can transform the original coupled system of difference equations to a system of decoupled difference equations in the newly defined variables, as in the case of differential equations. The decoupled system can be solved for each of the transformed variables in <span class="math inline">\(\mathbf{X}\)</span>. We can then find the solutions for the original vector of variables by using the reverse transformation</p>
+<p><span class="math display">\[\mathbf{x}_{t}=\mathbf{P} \mathbf{X}_{t}\]</span></p>
+<p>By using the diagonal matrix of the eigenvalues of <span class="math inline">\(\mathbf{A}\)</span> and the matrix of the corresponding (right) eigenvectors, we can solve the system of <span class="math inline">\(n\)</span> first-order linear difference equations (<a href="#eq-nsysOLD" class="quarto-xref"><span>3.22</span></a>). The solution method is similar in spirit to the one for a system of <span class="math inline">\(n\)</span> first-order differential equations discussed in <a href="ODE.html" class="quarto-xref"><span>Chapter 2</span></a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Keep in mind that the conditions for stability for discrete and continuous time systems are different. In continuous time, the conditions requires to compare the eigenvalues <span class="math inline">\(\lambda_i\)</span> to zero (i.e.&nbsp;a positive eigenvalue is unstable, a negative eigenvalue is stable). In contrast, in discrete time systems, the eigenvalues <span class="math inline">\(\lambda_i\)</span> (in absolute value) has to be compared to unity.(i.e.&nbsp;a stable eigenvalue is within the unit circle, an unstable eigenvalue is outside the unit circle).</p>
+</div>
+</div>
+</section>
+<section id="nonlinear-difference-equations" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="nonlinear-difference-equations"><span class="header-section-number">3.6</span> Nonlinear difference equations</h2>
+<p>We are interested now in problems of the form: <span class="math display">\[
+x_{t+1}=f(x_t)
+\]</span> with <span class="math inline">\(x_t\)</span> a vector <span class="math inline">\(x_t=(x_{1,t},x_{2,t},...,x_{n,t})\)</span> and <span class="math inline">\(f\)</span> is a shortcut notation for <span class="math inline">\(n\)</span> different functions. Just like in the case of differential equations, we can approximate in the neigborhood of the steady state <span class="math inline">\(\bar{x}\)</span> satisfying <span class="math inline">\(\bar{x}=f(\bar{x})\)</span>. Taking a first-order expansion:</p>
+<p><span class="math display">\[
+x_{t+1}=\underbrace{f(\bar{x})}_{=\bar{x}}+J(x_t-\bar{x})
+\]</span></p>
+<p>Where <span class="math inline">\(J\)</span> is the Jacobian matrix with entries <span class="math inline">\(f'(\bar{x})\)</span> for each <span class="math inline">\(x_{i,t}\)</span>, <span class="math inline">\(i=1,...,n\)</span>.</p>
+<p>Treating <span class="math inline">\(dx_t=(x_t-\bar{x})\)</span> and <span class="math inline">\(dx_{t+1}=(x_{t+1}-\bar{x})\)</span> as the new variables of interest, one can see that we obtain a <span class="math inline">\(n\)</span> system of first-order linear differential equations and use the techniques from <a href="#sec-norderdiffeq" class="quarto-xref"><span>Section 3.5</span></a>.</p>
+</section>
+<section id="qualitative-analysis" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="qualitative-analysis"><span class="header-section-number">3.7</span> Qualitative Analysis</h2>
+<p>It is possible to introduce some qualitative informations about systems. We focus on a generic pair of linear difference equation of the form:</p>
+<p><span class="math display">\[\begin{aligned}
+x_{t+1}=\tilde{a}x_t+by_t+c \\
+y_{t+1}= d x_t-\tilde{e}y_t +f
+\end{aligned}\]</span></p>
+<p>Define <span class="math inline">\(\Delta x_{t+1}=x_{t+1}-x_t\)</span> and <span class="math inline">\(\Delta y_{t+1}=y_{t+1}-y_t\)</span>, the above system rewrite:</p>
+<p><span class="math display">\[\begin{aligned}
+\Delta x_{t+1}=ax_t+by_t-c : \\
+\Delta y_{t+1}= d x_t-ey_t +f
+\end{aligned}\]</span></p>
+<p>where <span class="math inline">\(a=\tilde{a}-1\)</span> and <span class="math inline">\(e=1+\tilde{e}\)</span>. Without loss of generality, assume that all parameters <span class="math inline">\(a,b,c,d,e,f\)</span> are positive. We can draw the isoclines <span class="math inline">\(\Delta x_{t+1}=0\)</span> and <span class="math inline">\(\Delta y_{t+1}=0\)</span> in the plane <span class="math inline">\(\{x_t,y_t\}\)</span>, that is the <em>loci</em>:</p>
+<p><span class="math display">\[\begin{aligned}
+\Delta x_{t+1}=0 &amp;:&amp; \tilde{y}=\frac{-a x+c}{b}  \\
+\Delta y_{t+1}=0&amp;:&amp; \hat{y}=\frac{ dx+f}{e}
+\end{aligned}\]</span></p>
+<p>The next step is to characterize the <em>vector field</em>, that is the qualitative changes of <span class="math inline">\(x_t\)</span> and <span class="math inline">\(y_t\)</span> for every pair <span class="math inline">\({x,y}\)</span> outside the isoclines. For <span class="math inline">\(\Delta x_{t+1}\)</span>, we have:</p>
+<p><span class="math display">\[\begin{aligned}
+\Delta x_{t+1}\geq 0 \Leftrightarrow y_t \geq \frac{-a y+c}{b} \equiv \tilde{y} \\
+\Delta y_{t+1} \leq 0 \Leftrightarrow y_t \leq \frac{ dx+f}{e} \equiv \hat{y}
+\end{aligned}\]</span></p>
+<p>On the first hand, for every pair <span class="math inline">\(\{x_t,y_t \}\)</span> located on the right (left) of the locus <span class="math inline">\(\tilde{y}\)</span>, the value of <span class="math inline">\(x_t\)</span> increases (decreases) and goes on the right (left). On the other hand, for every pair <span class="math inline">\(\{x_t,y_t \}\)</span> located below (above) the locus <span class="math inline">\(\hat{y}\)</span>, the value of <span class="math inline">\(y_t\)</span> increases (decreases) and goes upward (downward).</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ODE.html" class="pagination-link" aria-label="Ordinary Differentials Equations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ordinary Differentials Equations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Intertemporal-Optimization.html" class="pagination-link" aria-label="Intertemporal Optimization">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Intertemporal Optimization</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
